@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1a1a3e" />
+      <stop offset="100%" stop-color="#0a0a1a" />
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="grad-blue-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg-glow)" />
+
+  <!-- Architecture blocks - Perception -->
+  <g filter="url(#glow)">
+    <rect x="120" y="220" width="240" height="120" rx="8" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.8" />
+    <rect x="120" y="220" width="240" height="120" rx="8" fill="#06B6D4" opacity="0.05" />
+    <text x="240" y="275" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="16" font-weight="bold">PERCEPTION</text>
+    <text x="240" y="305" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="11" opacity="0.7">sensors · input · context</text>
+    <!-- Eye icon -->
+    <ellipse cx="240" cy="245" rx="18" ry="10" fill="none" stroke="#06B6D4" stroke-width="1.5" opacity="0.5" />
+    <circle cx="240" cy="245" r="4" fill="#06B6D4" opacity="0.5" />
+  </g>
+
+  <!-- Arrow 1: Perception → Reasoning -->
+  <g filter="url(#glow)" opacity="0.6">
+    <line x1="370" y1="280" x2="460" y2="280" stroke="url(#grad-blue-violet)" stroke-width="2" />
+    <polygon points="460,274 475,280 460,286" fill="#8B5CF6" />
+    <text x="415" y="268" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="9" opacity="0.7">data</text>
+  </g>
+
+  <!-- Architecture blocks - Reasoning -->
+  <g filter="url(#glow)">
+    <rect x="480" y="200" width="260" height="160" rx="8" fill="none" stroke="#8B5CF6" stroke-width="2.5" opacity="0.9" />
+    <rect x="480" y="200" width="260" height="160" rx="8" fill="#8B5CF6" opacity="0.05" />
+    <text x="610" y="260" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="18" font-weight="bold">REASONING</text>
+    <text x="610" y="290" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="11" opacity="0.7">LLM · planning · logic</text>
+    <!-- Brain-like pattern -->
+    <g stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3">
+      <path d="M580 310 Q600 320 620 310 Q640 300 660 310" />
+      <path d="M570 325 Q600 340 640 325" />
+    </g>
+  </g>
+
+  <!-- Arrow 2: Reasoning → Action -->
+  <g filter="url(#glow)" opacity="0.6">
+    <line x1="750" y1="280" x2="840" y2="280" stroke="url(#grad-blue-violet)" stroke-width="2" />
+    <polygon points="840,274 855,280 840,286" fill="#3B82F6" />
+    <text x="795" y="268" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="9" opacity="0.7">plan</text>
+  </g>
+
+  <!-- Architecture blocks - Action -->
+  <g filter="url(#glow)">
+    <rect x="860" y="220" width="240" height="120" rx="8" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.8" />
+    <rect x="860" y="220" width="240" height="120" rx="8" fill="#3B82F6" opacity="0.05" />
+    <text x="980" y="275" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="16" font-weight="bold">ACTION</text>
+    <text x="980" y="305" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="11" opacity="0.7">tools · APIs · output</text>
+    <!-- Gear icon -->
+    <g stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.5" transform="translate(980,245)">
+      <circle r="8" /><circle r="3" />
+      <line x1="0" y1="-12" x2="0" y2="-8" /><line x1="0" y1="8" x2="0" y2="12" />
+      <line x1="-12" y1="0" x2="-8" y2="0" /><line x1="8" y1="0" x2="12" y2="0" />
+    </g>
+  </g>
+
+  <!-- Memory block (below reasoning) -->
+  <g filter="url(#glow)" opacity="0.6">
+    <rect x="520" y="420" width="180" height="80" rx="6" fill="none" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="6 3" />
+    <text x="610" y="460" text-anchor="middle" fill="#A855F7" font-family="monospace" font-size="13">MEMORY</text>
+    <text x="610" y="480" text-anchor="middle" fill="#A855F7" font-family="monospace" font-size="9" opacity="0.6">state · history · context</text>
+    <!-- Bidirectional arrow to Reasoning -->
+    <line x1="610" y1="360" x2="610" y2="415" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="4 2" />
+    <polygon points="604,370 610,360 616,370" fill="#A855F7" opacity="0.6" />
+    <polygon points="604,405 610,415 616,405" fill="#A855F7" opacity="0.6" />
+  </g>
+
+  <!-- Tools block (below action) -->
+  <g filter="url(#glow)" opacity="0.5">
+    <rect x="900" y="400" width="160" height="70" rx="6" fill="none" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="6 3" />
+    <text x="980" y="435" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="12">TOOLS</text>
+    <text x="980" y="452" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="9" opacity="0.6">search · code · browse</text>
+    <line x1="980" y1="340" x2="980" y2="395" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="4 2" />
+    <polygon points="974,385 980,395 986,385" fill="#06B6D4" opacity="0.5" />
+  </g>
+
+  <!-- Feedback loop arrow (Action back to Perception) -->
+  <g opacity="0.2" stroke="#06B6D4" stroke-width="1.5" fill="none">
+    <path d="M980 350 Q980 550 600 560 Q200 555 240 350" />
+    <polygon points="234,360 240,345 246,360" fill="#06B6D4" />
+    <text x="600" y="580" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="10">feedback loop</text>
+  </g>
+
+  <!-- Layer labels top -->
+  <g fill="#fff" font-family="monospace" font-size="11" opacity="0.15">
+    <text x="240" y="195">Layer 1</text>
+    <text x="610" y="185" text-anchor="middle">Layer 2</text>
+    <text x="980" y="195" text-anchor="middle">Layer 3</text>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#06B6D4" opacity="0.25">
+    <circle cx="80" cy="100" r="2" /><circle cx="300" cy="80" r="1.5" />
+    <circle cx="700" cy="90" r="2" /><circle cx="1100" cy="120" r="2.5" />
+    <circle cx="150" cy="530" r="1.5" /><circle cx="800" cy="560" r="2" />
+  </g>
+
+  <!-- Circuit traces -->
+  <g opacity="0.06" stroke="#3B82F6" stroke-width="1" fill="none">
+    <path d="M0 100 L60 100 L60 60 L140 60" />
+    <path d="M1060 50 L1120 50 L1120 90 L1200 90" />
+  </g>
+</svg>
