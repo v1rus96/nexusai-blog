@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" fill="none">
+  <rect width="800" height="440" rx="12" fill="#0F1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="16" font-weight="bold">AI + Blockchain Project Categories</text>
+  <!-- Row 1 -->
+  <!-- Compute -->
+  <rect x="40" y="60" width="170" height="100" rx="8" fill="#1E293B" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="125" y="85" text-anchor="middle" fill="#22D3EE" font-family="sans-serif" font-size="13" font-weight="bold">⚡ Compute</text>
+  <text x="125" y="110" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Render Network</text>
+  <text x="125" y="130" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Akash Network</text>
+  <!-- Agents -->
+  <rect x="230" y="60" width="170" height="100" rx="8" fill="#1E293B" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="315" y="85" text-anchor="middle" fill="#A5B4FC" font-family="sans-serif" font-size="13" font-weight="bold">🤖 Agents</text>
+  <text x="315" y="110" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Fetch.ai</text>
+  <text x="315" y="130" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">SingularityNET</text>
+  <!-- ML / Intelligence -->
+  <rect x="420" y="60" width="170" height="100" rx="8" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="505" y="85" text-anchor="middle" fill="#C4B5FD" font-family="sans-serif" font-size="13" font-weight="bold">🧠 ML Networks</text>
+  <text x="505" y="110" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Bittensor</text>
+  <text x="505" y="130" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Numerai</text>
+  <!-- Data -->
+  <rect x="610" y="60" width="150" height="100" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="685" y="85" text-anchor="middle" fill="#38BDF8" font-family="sans-serif" font-size="13" font-weight="bold">📊 Data</text>
+  <text x="685" y="115" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Ocean Protocol</text>
+  <!-- Row 2 -->
+  <!-- Identity -->
+  <rect x="80" y="200" width="170" height="100" rx="8" fill="#1E293B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="165" y="225" text-anchor="middle" fill="#6EE7B7" font-family="sans-serif" font-size="13" font-weight="bold">🪪 Identity</text>
+  <text x="165" y="255" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Worldcoin</text>
+  <!-- Oracles -->
+  <rect x="310" y="200" width="170" height="100" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="395" y="225" text-anchor="middle" fill="#FCD34D" font-family="sans-serif" font-size="13" font-weight="bold">🔗 Oracles</text>
+  <text x="395" y="255" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Chainlink</text>
+  <!-- Creative -->
+  <rect x="540" y="200" width="170" height="100" rx="8" fill="#1E293B" stroke="#F472B6" stroke-width="1.5"/>
+  <text x="625" y="225" text-anchor="middle" fill="#F9A8D4" font-family="sans-serif" font-size="13" font-weight="bold">🎨 Creative AI</text>
+  <text x="625" y="255" text-anchor="middle" fill="#CBD5E1" font-family="sans-serif" font-size="11">Alethea AI</text>
+  <!-- Bottom label -->
+  <text x="400" y="370" text-anchor="middle" fill="#64748B" font-family="sans-serif" font-size="11">Each project addresses a different layer of the AI + blockchain ecosystem</text>
+  <!-- Connecting line -->
+  <line x1="100" y1="340" x2="700" y2="340" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="400" y="395" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="12">Together they form the full decentralized AI stack</text>
+</svg>

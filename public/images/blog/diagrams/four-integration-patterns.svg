@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" rx="12" fill="#0F1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="16" font-weight="bold">4 Integration Patterns</text>
+  <!-- Pattern 1: Direct Wallet -->
+  <rect x="40" y="60" width="350" height="130" rx="10" fill="#1E293B" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="60" y="90" fill="#A5B4FC" font-family="sans-serif" font-size="13" font-weight="bold">1. Direct Wallet Control</text>
+  <text x="60" y="115" fill="#94A3B8" font-family="sans-serif" font-size="11">Agent holds private key directly.</text>
+  <text x="60" y="135" fill="#94A3B8" font-family="sans-serif" font-size="11">Simple but risky — full autonomy.</text>
+  <rect x="280" y="85" width="90" height="40" rx="6" fill="#312E81"/>
+  <text x="325" y="110" text-anchor="middle" fill="#C7D2FE" font-family="sans-serif" font-size="11">🔑 Agent</text>
+  <text x="60" y="170" fill="#64748B" font-family="sans-serif" font-size="10">Best for: Low-value, high-speed ops</text>
+  <!-- Pattern 2: Guardrails -->
+  <rect x="410" y="60" width="350" height="130" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="430" y="90" fill="#C4B5FD" font-family="sans-serif" font-size="13" font-weight="bold">2. Smart Contract Guardrails</text>
+  <text x="430" y="115" fill="#94A3B8" font-family="sans-serif" font-size="11">Contract enforces limits on agent.</text>
+  <text x="430" y="135" fill="#94A3B8" font-family="sans-serif" font-size="11">Spending caps, whitelists, cooldowns.</text>
+  <rect x="650" y="85" width="90" height="40" rx="6" fill="#3B1F7E"/>
+  <text x="695" y="110" text-anchor="middle" fill="#DDD6FE" font-family="sans-serif" font-size="11">🛡️ Guard</text>
+  <text x="430" y="170" fill="#64748B" font-family="sans-serif" font-size="10">Best for: Production DeFi agents</text>
+  <!-- Pattern 3: Intent-Based -->
+  <rect x="40" y="220" width="350" height="130" rx="10" fill="#1E293B" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="60" y="250" fill="#67E8F9" font-family="sans-serif" font-size="13" font-weight="bold">3. Intent-Based Execution</text>
+  <text x="60" y="275" fill="#94A3B8" font-family="sans-serif" font-size="11">Agent submits intents, solvers execute.</text>
+  <text x="60" y="295" fill="#94A3B8" font-family="sans-serif" font-size="11">MEV protection, optimal routing.</text>
+  <rect x="280" y="245" width="90" height="40" rx="6" fill="#0C4A6E"/>
+  <text x="325" y="270" text-anchor="middle" fill="#BAE6FD" font-family="sans-serif" font-size="11">📋 Intent</text>
+  <text x="60" y="330" fill="#64748B" font-family="sans-serif" font-size="10">Best for: Complex DeFi strategies</text>
+  <!-- Pattern 4: Multi-Sig -->
+  <rect x="410" y="220" width="350" height="130" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="430" y="250" fill="#6EE7B7" font-family="sans-serif" font-size="13" font-weight="bold">4. Multi-Sig Committee</text>
+  <text x="430" y="275" fill="#94A3B8" font-family="sans-serif" font-size="11">Multiple agents must agree.</text>
+  <text x="430" y="295" fill="#94A3B8" font-family="sans-serif" font-size="11">Consensus-based, fault-tolerant.</text>
+  <rect x="650" y="245" width="90" height="40" rx="6" fill="#14532D"/>
+  <text x="695" y="270" text-anchor="middle" fill="#BBF7D0" font-family="sans-serif" font-size="11">🤝 Multi</text>
+  <text x="430" y="330" fill="#64748B" font-family="sans-serif" font-size="10">Best for: High-value decisions</text>
+  <text x="400" y="385" text-anchor="middle" fill="#64748B" font-family="sans-serif" font-size="11">Security increases ↗ · Complexity increases ↗ · Speed decreases ↘</text>
+</svg>
