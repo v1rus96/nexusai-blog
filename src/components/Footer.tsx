@@ -31,10 +31,24 @@ export default function Footer() {
             ))}
             <span className="text-gray-400 dark:text-gray-600">·</span>
             <Link
+              href="/tags"
+              className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            >
+              Tags
+            </Link>
+            <span className="text-gray-400 dark:text-gray-600">·</span>
+            <Link
               href="/about"
               className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
             >
               About
+            </Link>
+            <span className="text-gray-400 dark:text-gray-600">·</span>
+            <Link
+              href="/subscribe"
+              className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            >
+              Subscribe
             </Link>
             <span className="text-gray-400 dark:text-gray-600">·</span>
             <Link

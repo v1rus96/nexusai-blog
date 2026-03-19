@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
-import { getAllPosts, getAllCategories, slugify } from "@/lib/posts";
+import { getAllPosts, getAllCategories, getAllTags, slugify } from "@/lib/posts";
+import { getAllAuthors } from "@/data/authors";
 import { SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +18,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const tags = getAllTags().map((t) => ({
+    url: `${SITE_URL}/tags/${slugify(t.tag)}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
+  const authors = getAllAuthors().map((a) => ({
+    url: `${SITE_URL}/author/${a.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     {
       url: SITE_URL,
@@ -26,5 +41,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...posts,
     ...categories,
+    {
+      url: `${SITE_URL}/tags`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    ...tags,
+    ...authors,
+    {
+      url: `${SITE_URL}/subscribe`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 }

@@ -47,7 +47,7 @@ export function getAllPosts(): PostMeta[] {
       category: data.category ?? "",
       tags: Array.isArray(data.tags) ? data.tags : [],
       image: data.image ?? "",
-      author: data.author ?? "LionTech AI Team",
+      author: data.author ?? "Firuz Akhmadov",
       readingTime: rt.text,
     };
   });
@@ -68,7 +68,7 @@ export function getPostBySlug(slug: string): Post | null {
     category: data.category ?? "",
     tags: Array.isArray(data.tags) ? data.tags : [],
     image: data.image ?? "",
-    author: data.author ?? "LionTech AI Team",
+    author: data.author ?? "Firuz Akhmadov",
     readingTime: rt.text,
     content,
   };
@@ -91,6 +91,37 @@ export function getAllSlugs(): string[] {
     .readdirSync(postsDirectory)
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+export function getPostsByTag(tag: string): PostMeta[] {
+  return getAllPosts().filter((p) =>
+    p.tags.some((t) => slugify(t) === slugify(tag))
+  );
+}
+
+export function getPostsByAuthor(authorName: string): PostMeta[] {
+  return getAllPosts().filter(
+    (p) => p.author.toLowerCase() === authorName.toLowerCase()
+  );
+}
+
+export function getAllTags(): { tag: string; count: number }[] {
+  const posts = getAllPosts();
+  const tagMap = new Map<string, { display: string; count: number }>();
+  for (const post of posts) {
+    for (const tag of post.tags) {
+      const key = slugify(tag);
+      const existing = tagMap.get(key);
+      if (existing) {
+        existing.count++;
+      } else {
+        tagMap.set(key, { display: tag, count: 1 });
+      }
+    }
+  }
+  return Array.from(tagMap.values())
+    .map((v) => ({ tag: v.display, count: v.count }))
+    .sort((a, b) => b.count - a.count);
 }
 
 export function getRelatedPosts(currentSlug: string, limit = 2): PostMeta[] {
