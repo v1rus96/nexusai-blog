@@ -6,6 +6,11 @@
 
 set -e  # Exit on any error
 
+# Auto-load token if not set
+if [ -z "$VERCEL_TOKEN" ] && [ -f "$(dirname "$0")/.env.publish" ]; then
+    source "$(dirname "$0")/.env.publish"
+fi
+
 # Configuration
 BLOG_URL="https://ai-blockchain-blog.vercel.app"
 POSTS_DIR="content/posts"
