@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="asc-glow1" cx="35%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="asc-glow2" cx="65%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="asc-glow3" cx="50%" cy="50%" r="25%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="asc-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="asc-blur-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="asc-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0A0F" />
+  <rect width="1200" height="630" fill="url(#asc-glow1)" />
+  <rect width="1200" height="630" fill="url(#asc-glow2)" />
+  <rect width="1200" height="630" fill="url(#asc-glow3)" />
+
+  <!-- Faint grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630" /><line x1="60" y1="0" x2="60" y2="630" />
+    <line x1="120" y1="0" x2="120" y2="630" /><line x1="180" y1="0" x2="180" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" /><line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="360" y1="0" x2="360" y2="630" /><line x1="420" y1="0" x2="420" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" /><line x1="540" y1="0" x2="540" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" /><line x1="660" y1="0" x2="660" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" /><line x1="780" y1="0" x2="780" y2="630" />
+    <line x1="840" y1="0" x2="840" y2="630" /><line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" /><line x1="1020" y1="0" x2="1020" y2="630" />
+    <line x1="1080" y1="0" x2="1080" y2="630" /><line x1="1140" y1="0" x2="1140" y2="630" />
+    <line x1="0" y1="63" x2="1200" y2="63" /><line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="189" x2="1200" y2="189" /><line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="315" x2="1200" y2="315" /><line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="441" x2="1200" y2="441" /><line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="0" y1="567" x2="1200" y2="567" />
+  </g>
+
+  <!-- AI Agent figure (left side) - abstract geometric humanoid -->
+  <g filter="url(#asc-blur)" transform="translate(300, 315)">
+    <!-- Head - octagonal -->
+    <polygon points="0,-120 35,-105 50,-70 50,-35 35,0 -35,0 -50,-35 -50,-70 -35,-105" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.7" />
+    <circle cx="0" cy="-60" r="25" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.3" />
+    <!-- Eye -->
+    <circle cx="0" cy="-60" r="10" fill="#06B6D4" opacity="0.3" />
+    <circle cx="0" cy="-60" r="4" fill="#06B6D4" opacity="0.6" />
+    <!-- Body -->
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#06B6D4" stroke-width="2" opacity="0.5" />
+    <!-- Arms -->
+    <line x1="0" y1="20" x2="-50" y2="50" stroke="#06B6D4" stroke-width="1.5" opacity="0.4" />
+    <line x1="0" y1="20" x2="50" y2="10" stroke="#06B6D4" stroke-width="1.5" opacity="0.5" />
+    <!-- Legs -->
+    <line x1="0" y1="80" x2="-30" y2="140" stroke="#06B6D4" stroke-width="1.5" opacity="0.4" />
+    <line x1="0" y1="80" x2="30" y2="140" stroke="#06B6D4" stroke-width="1.5" opacity="0.4" />
+    <!-- Shoulder nodes -->
+    <circle cx="-50" cy="50" r="5" fill="#06B6D4" opacity="0.3" />
+    <circle cx="50" cy="10" r="5" fill="#06B6D4" opacity="0.3" />
+    <!-- Data emanation from head -->
+    <circle cx="0" cy="-120" r="3" fill="#06B6D4" opacity="0.4" />
+    <circle cx="-20" cy="-130" r="2" fill="#3B82F6" opacity="0.3" />
+    <circle cx="20" cy="-135" r="2" fill="#3B82F6" opacity="0.3" />
+  </g>
+
+  <!-- Connection lines from agent to blockchain -->
+  <g stroke="url(#asc-line)" stroke-width="1.5" opacity="0.5">
+    <line x1="350" y1="325" x2="620" y2="200" />
+    <line x1="350" y1="315" x2="620" y2="315" />
+    <line x1="350" y1="325" x2="620" y2="430" />
+    <!-- Data dots along lines -->
+    <circle cx="450" cy="275" r="3" fill="#06B6D4" opacity="0.5" />
+    <circle cx="520" cy="240" r="2" fill="#3B82F6" opacity="0.4" />
+    <circle cx="500" cy="315" r="3" fill="#06B6D4" opacity="0.5" />
+    <circle cx="450" cy="360" r="2" fill="#8B5CF6" opacity="0.4" />
+    <circle cx="520" cy="390" r="3" fill="#06B6D4" opacity="0.5" />
+  </g>
+
+  <!-- Blockchain blocks (right side) -->
+  <g filter="url(#asc-blur)">
+    <!-- Block 1 (top) -->
+    <rect x="620" y="160" width="80" height="80" rx="6" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" opacity="0.7" />
+    <rect x="630" y="170" width="60" height="12" rx="2" fill="#3B82F6" opacity="0.15" />
+    <rect x="630" y="188" width="40" height="8" rx="2" fill="#3B82F6" opacity="0.1" />
+    <rect x="630" y="202" width="50" height="8" rx="2" fill="#3B82F6" opacity="0.08" />
+    <rect x="630" y="216" width="30" height="8" rx="2" fill="#3B82F6" opacity="0.06" />
+
+    <!-- Chain link 1→2 -->
+    <line x1="700" y1="240" x2="770" y2="275" stroke="#8B5CF6" stroke-width="1.5" opacity="0.4" />
+    <circle cx="735" cy="257" r="3" fill="#8B5CF6" opacity="0.4" />
+
+    <!-- Block 2 (middle) -->
+    <rect x="770" y="275" width="80" height="80" rx="6" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2" opacity="0.7" />
+    <rect x="780" y="285" width="60" height="12" rx="2" fill="#8B5CF6" opacity="0.15" />
+    <rect x="780" y="303" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.1" />
+    <rect x="780" y="317" width="50" height="8" rx="2" fill="#8B5CF6" opacity="0.08" />
+    <rect x="780" y="331" width="35" height="8" rx="2" fill="#8B5CF6" opacity="0.06" />
+
+    <!-- Chain link 2→3 -->
+    <line x1="850" y1="355" x2="920" y2="390" stroke="#06B6D4" stroke-width="1.5" opacity="0.4" />
+    <circle cx="885" cy="372" r="3" fill="#06B6D4" opacity="0.4" />
+
+    <!-- Block 3 (bottom) -->
+    <rect x="620" y="390" width="80" height="80" rx="6" fill="#0A0A0F" stroke="#06B6D4" stroke-width="2" opacity="0.7" />
+    <rect x="630" y="400" width="60" height="12" rx="2" fill="#06B6D4" opacity="0.15" />
+    <rect x="630" y="418" width="40" height="8" rx="2" fill="#06B6D4" opacity="0.1" />
+    <rect x="630" y="432" width="50" height="8" rx="2" fill="#06B6D4" opacity="0.08" />
+    <rect x="630" y="446" width="30" height="8" rx="2" fill="#06B6D4" opacity="0.06" />
+
+    <!-- Block 4 (far right) -->
+    <rect x="920" y="370" width="80" height="80" rx="6" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" opacity="0.6" />
+    <rect x="930" y="380" width="60" height="12" rx="2" fill="#3B82F6" opacity="0.12" />
+    <rect x="930" y="398" width="40" height="8" rx="2" fill="#3B82F6" opacity="0.08" />
+    <rect x="930" y="412" width="50" height="8" rx="2" fill="#3B82F6" opacity="0.06" />
+
+    <!-- Chain link 3→4 -->
+    <line x1="700" y1="430" x2="770" y2="355" stroke="#3B82F6" stroke-width="1" opacity="0.3" />
+
+    <!-- Additional floating block (faint) -->
+    <rect x="920" y="160" width="60" height="60" rx="4" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.25" />
+    <line x1="700" y1="200" x2="920" y2="190" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" />
+  </g>
+
+  <!-- Smart contract symbol in center -->
+  <g filter="url(#asc-blur)" opacity="0.4">
+    <rect x="560" y="290" width="50" height="50" rx="4" fill="none" stroke="#06B6D4" stroke-width="1.5" transform="rotate(45 585 315)" />
+  </g>
+
+  <!-- Decorative particles -->
+  <g fill="rgba(255,255,255,0.08)">
+    <circle cx="150" cy="100" r="2" />
+    <circle cx="1050" cy="100" r="2" />
+    <circle cx="150" cy="530" r="1.5" />
+    <circle cx="1050" cy="530" r="1.5" />
+    <circle cx="600" cy="80" r="1" />
+    <circle cx="600" cy="570" r="1" />
+  </g>
+</svg>

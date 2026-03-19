@@ -15,6 +15,7 @@ import ArticleReactions from "@/components/ArticleReactions";
 import ArticleQuiz from "@/components/ArticleQuiz";
 import ArticleReadTracker from "@/components/ArticleReadTracker";
 import CodeCopyWrapper from "@/components/CodeCopyWrapper";
+import remarkGfm from "remark-gfm";
 import { quizzes } from "@/data/quizzes";
 
 export async function generateStaticParams() {
@@ -233,7 +234,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Content */}
         <div className="prose-custom max-w-[680px]">
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
         </div>
 
         {/* Tags */}

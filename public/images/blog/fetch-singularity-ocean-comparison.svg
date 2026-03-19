@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="fso-glow1" cx="30%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="fso-glow2" cx="70%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="fso-glow3" cx="50%" cy="45%" r="30%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="fso-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fso-blur-sm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0A0F" />
+  <rect width="1200" height="630" fill="url(#fso-glow1)" />
+  <rect width="1200" height="630" fill="url(#fso-glow2)" />
+  <rect width="1200" height="630" fill="url(#fso-glow3)" />
+
+  <!-- Faint grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630" /><line x1="60" y1="0" x2="60" y2="630" />
+    <line x1="120" y1="0" x2="120" y2="630" /><line x1="180" y1="0" x2="180" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" /><line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="360" y1="0" x2="360" y2="630" /><line x1="420" y1="0" x2="420" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" /><line x1="540" y1="0" x2="540" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" /><line x1="660" y1="0" x2="660" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" /><line x1="780" y1="0" x2="780" y2="630" />
+    <line x1="840" y1="0" x2="840" y2="630" /><line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" /><line x1="1020" y1="0" x2="1020" y2="630" />
+    <line x1="1080" y1="0" x2="1080" y2="630" /><line x1="1140" y1="0" x2="1140" y2="630" />
+    <line x1="0" y1="63" x2="1200" y2="63" /><line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="189" x2="1200" y2="189" /><line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="315" x2="1200" y2="315" /><line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="441" x2="1200" y2="441" /><line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="0" y1="567" x2="1200" y2="567" />
+  </g>
+
+  <!-- Three overlapping circles - Venn diagram style -->
+  <!-- Circle 1 (Left - Blue) - Fetch.ai -->
+  <circle cx="470" cy="280" r="180" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.6" filter="url(#fso-blur)" />
+  <circle cx="470" cy="280" r="180" fill="#3B82F6" opacity="0.06" />
+  <circle cx="470" cy="280" r="140" fill="none" stroke="#3B82F6" stroke-width="0.5" opacity="0.2" />
+  <circle cx="470" cy="280" r="100" fill="none" stroke="#3B82F6" stroke-width="0.5" opacity="0.15" />
+  <!-- Inner geometric detail -->
+  <polygon points="430,230 510,230 470,190" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.3" />
+  <circle cx="470" cy="260" r="15" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.25" />
+
+  <!-- Circle 2 (Right - Violet) - SingularityNET -->
+  <circle cx="730" cy="280" r="180" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.6" filter="url(#fso-blur)" />
+  <circle cx="730" cy="280" r="180" fill="#8B5CF6" opacity="0.06" />
+  <circle cx="730" cy="280" r="140" fill="none" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" />
+  <circle cx="730" cy="280" r="100" fill="none" stroke="#8B5CF6" stroke-width="0.5" opacity="0.15" />
+  <!-- Inner geometric detail -->
+  <rect x="710" y="230" width="40" height="40" rx="4" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.3" transform="rotate(45 730 250)" />
+  <circle cx="730" cy="260" r="12" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.25" />
+
+  <!-- Circle 3 (Bottom - Cyan) - Ocean Protocol -->
+  <circle cx="600" cy="380" r="180" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.6" filter="url(#fso-blur)" />
+  <circle cx="600" cy="380" r="180" fill="#06B6D4" opacity="0.06" />
+  <circle cx="600" cy="380" r="140" fill="none" stroke="#06B6D4" stroke-width="0.5" opacity="0.2" />
+  <circle cx="600" cy="380" r="100" fill="none" stroke="#06B6D4" stroke-width="0.5" opacity="0.15" />
+  <!-- Inner geometric detail - wave-like -->
+  <path d="M560,400 Q580,380 600,400 Q620,420 640,400" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.3" />
+  <circle cx="600" cy="410" r="10" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.25" />
+
+  <!-- Overlap intersection highlights -->
+  <!-- Blue-Violet overlap -->
+  <ellipse cx="600" cy="260" rx="30" ry="50" fill="#7C3AED" opacity="0.08" />
+  <!-- Blue-Cyan overlap -->
+  <ellipse cx="520" cy="350" rx="30" ry="50" fill="#0EA5E9" opacity="0.08" transform="rotate(-30 520 350)" />
+  <!-- Violet-Cyan overlap -->
+  <ellipse cx="680" cy="350" rx="30" ry="50" fill="#7C3AED" opacity="0.06" transform="rotate(30 680 350)" />
+  <!-- Triple overlap center -->
+  <circle cx="600" cy="315" r="20" fill="white" opacity="0.06" filter="url(#fso-blur-sm)" />
+  <circle cx="600" cy="315" r="8" fill="white" opacity="0.1" />
+
+  <!-- Connecting nodes at intersections -->
+  <g filter="url(#fso-blur-sm)">
+    <circle cx="600" cy="315" r="5" fill="#06B6D4" opacity="0.6" />
+    <circle cx="600" cy="240" r="4" fill="#7C3AED" opacity="0.5" />
+    <circle cx="530" cy="345" r="4" fill="#0EA5E9" opacity="0.5" />
+    <circle cx="670" cy="345" r="4" fill="#A855F7" opacity="0.5" />
+  </g>
+
+  <!-- Decorative data points around circles -->
+  <g fill="rgba(255,255,255,0.08)">
+    <circle cx="320" cy="180" r="2" />
+    <circle cx="280" cy="350" r="1.5" />
+    <circle cx="880" cy="180" r="2" />
+    <circle cx="920" cy="350" r="1.5" />
+    <circle cx="600" cy="560" r="2" />
+    <circle cx="450" cy="520" r="1.5" />
+    <circle cx="750" cy="520" r="1.5" />
+    <circle cx="600" cy="100" r="1.5" />
+  </g>
+
+  <!-- Subtle connecting lines from circles outward -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="0.5">
+    <line x1="290" y1="280" x2="200" y2="280" />
+    <line x1="910" y1="280" x2="1000" y2="280" />
+    <line x1="600" y1="560" x2="600" y2="590" />
+    <line x1="370" y1="160" x2="300" y2="100" />
+    <line x1="830" y1="160" x2="900" y2="100" />
+  </g>
+</svg>
