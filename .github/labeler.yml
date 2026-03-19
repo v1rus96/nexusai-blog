@@ -1,0 +1,76 @@
+# Auto-labeler configuration
+# Labels PRs based on changed files
+
+'area:frontend':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/components/**/*'
+      - 'src/app/**/*'
+      - 'src/styles/**/*'
+      - 'public/**/*'
+
+'area:backend':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/**/*'
+      - 'src/utils/**/*'
+      - 'scripts/**/*'
+
+'area:content':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'content/**/*'
+      - '**/*.md'
+      - '**/*.mdx'
+
+'area:config':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '*.config.*'
+      - '.env*'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.eslintrc*'
+      - '.prettierrc*'
+      - 'tailwind.config.*'
+
+'area:ci-cd':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**/*'
+      - '.vercel/**/*'
+
+'area:docs':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'docs/**/*'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CHANGELOG.md'
+
+'type:dependencies':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'package.json'
+      - 'package-lock.json'
+
+'size:small':
+  - changed-files:
+    - count-type: files
+      count: 1..3
+
+'size:medium':
+  - changed-files:
+    - count-type: files
+      count: 4..10
+
+'size:large':
+  - changed-files:
+    - count-type: files
+      count: 11..50
+
+'size:xl':
+  - changed-files:
+    - count-type: files
+      count: 51+

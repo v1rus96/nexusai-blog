@@ -1,0 +1,127 @@
+name: Bundle Analysis
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  analyze:
+    name: Analyze Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+
+      - name: Checkout head
+        uses: actions/checkout@v4
+        with:
+          path: head
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            base/package-lock.json
+            head/package-lock.json
+
+      - name: Install base dependencies
+        run: npm ci
+        working-directory: ./base
+
+      - name: Install head dependencies  
+        run: npm ci
+        working-directory: ./head
+
+      - name: Build base
+        run: npm run build
+        working-directory: ./base
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Build head
+        run: npm run build
+        working-directory: ./head
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Analyze bundle sizes
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            function parseNextBundleAnalyzer(buildPath) {
+              const buildManifest = JSON.parse(
+                fs.readFileSync(path.join(buildPath, '.next/build-manifest.json'), 'utf8')
+              );
+              
+              let totalSize = 0;
+              const files = buildManifest.pages['/'] || [];
+              
+              for (const file of files) {
+                try {
+                  const filePath = path.join(buildPath, '.next', file);
+                  if (fs.existsSync(filePath)) {
+                    const stats = fs.statSync(filePath);
+                    totalSize += stats.size;
+                  }
+                } catch (e) {
+                  console.log(`Could not read file: ${file}`);
+                }
+              }
+              
+              return {
+                totalSize,
+                files: files.length
+              };
+            }
+
+            const baseStats = parseNextBundleAnalyzer('./base');
+            const headStats = parseNextBundleAnalyzer('./head');
+
+            const sizeDiff = headStats.totalSize - baseStats.totalSize;
+            const percentChange = baseStats.totalSize === 0 ? 100 : (sizeDiff / baseStats.totalSize) * 100;
+
+            const formatSize = (bytes) => {
+              if (bytes === 0) return '0 B';
+              const k = 1024;
+              const sizes = ['B', 'KB', 'MB', 'GB'];
+              const i = Math.floor(Math.log(bytes) / Math.log(k));
+              return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            };
+
+            const emoji = sizeDiff > 0 ? '📈' : sizeDiff < 0 ? '📉' : '➡️';
+            const sizeStatus = Math.abs(percentChange) > 10 ? '⚠️' : '✅';
+
+            const comment = `## ${emoji} Bundle Size Analysis ${sizeStatus}
+
+            | Metric | Base | Head | Change |
+            |--------|------|------|--------|
+            | **Total Size** | ${formatSize(baseStats.totalSize)} | ${formatSize(headStats.totalSize)} | ${sizeDiff >= 0 ? '+' : ''}${formatSize(Math.abs(sizeDiff))} (${percentChange.toFixed(2)}%) |
+            | **Files** | ${baseStats.files} | ${headStats.files} | ${headStats.files - baseStats.files} |
+
+            ${Math.abs(percentChange) > 10 ? `⚠️ **Warning**: Bundle size changed by more than 10%` : ''}
+            ${sizeDiff > 50000 ? `❌ **Alert**: Bundle size increased by more than 50KB` : ''}
+
+            <details>
+            <summary>Bundle Analysis Details</summary>
+
+            - Base commit: \`${context.payload.pull_request.base.sha.substring(0, 7)}\`
+            - Head commit: \`${context.payload.pull_request.head.sha.substring(0, 7)}\`
+            - Analysis run: ${new Date().toISOString()}
+
+            </details>
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

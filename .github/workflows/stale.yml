@@ -1,0 +1,77 @@
+name: Stale Issue & PR Management
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # Daily at 9 AM UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  stale:
+    name: Handle Stale Items
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Stale Issues and PRs
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Stale thresholds (as per scope)
+          days-before-stale: 14
+          days-before-close: 7
+          days-before-issue-stale: 30
+          days-before-issue-close: 7
+          
+          # Labels
+          stale-issue-label: 'status:stale'
+          stale-pr-label: 'status:stale'
+          close-issue-label: 'status:closed-stale'
+          close-pr-label: 'status:closed-stale'
+          
+          # Exempt labels (won't be marked stale)
+          exempt-issue-labels: 'priority:high,priority:critical,status:blocked,status:in-progress,good first issue'
+          exempt-pr-labels: 'priority:high,priority:critical,status:blocked,status:in-review,status:ready-to-merge'
+          exempt-all-issue-milestones: true
+          
+          # Messages
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had recent activity. 
+            
+            It will be closed in 7 days if no further activity occurs.
+            
+            To keep this issue open, please:
+            - Add a comment explaining why this should remain open
+            - Add the `priority:high` or `status:blocked` label
+            - Assign it to a milestone
+            
+            Thank you for your contributions! 🙏
+            
+          stale-pr-message: |
+            This pull request has been automatically marked as stale because it has not had recent activity.
+            
+            It will be closed in 7 days if no further activity occurs.
+            
+            To keep this PR open, please:
+            - Add a comment with an update or rebase the branch
+            - Add the `priority:high` or `status:in-review` label
+            - Request a review from a maintainer
+            
+            Thank you for your contributions! 🙏
+            
+          close-issue-message: |
+            This issue was closed because it has been stale for 7 days with no activity.
+            
+            If you believe this issue should remain open, please reopen it and provide additional context.
+            
+          close-pr-message: |
+            This pull request was closed because it has been stale for 7 days with no activity.
+            
+            If this PR is still relevant, please reopen it and update the branch.
+            
+          # Options
+          ascending: true
+          operations-per-run: 100
+          remove-stale-when-updated: true
+          enable-statistics: true

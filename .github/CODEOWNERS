@@ -1,0 +1,112 @@
+# CODEOWNERS - Code Review Assignments
+# 
+# This file defines code ownership for automatic reviewer assignment on PRs.
+# Order matters - last matching pattern takes precedence.
+#
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# ==============================================================================
+# DEFAULT REVIEWERS
+# ==============================================================================
+
+# Global fallback - owner is responsible for everything by default
+* @v1rus96
+
+# ==============================================================================
+# CORE INFRASTRUCTURE & CONFIGURATION
+# ==============================================================================
+
+# Root configuration files require careful review
+/.env* @v1rus96
+/.git* @v1rus96
+/package*.json @v1rus96
+/pnpm-lock.yaml @v1rus96
+/tsconfig*.json @v1rus96
+/next.config.js @v1rus96
+/tailwind.config.js @v1rus96
+/postcss.config.js @v1rus96
+
+# GitHub workflows and governance
+/.github/ @v1rus96
+/CONTRIBUTING.md @v1rus96
+/SECURITY.md @v1rus96
+/LICENSE @v1rus96
+
+# ==============================================================================
+# APPLICATION CODE
+# ==============================================================================
+
+# Source code - all engineers can review
+/src/ @v1rus96
+
+# Components require UI/UX consideration
+/src/components/ @v1rus96
+
+# API routes and server logic need backend focus
+/src/app/api/ @v1rus96
+/src/lib/ @v1rus96
+
+# Database and data layer
+/src/lib/db/ @v1rus96
+/prisma/ @v1rus96
+/supabase/ @v1rus96
+
+# ==============================================================================
+# CONTENT & DOCUMENTATION
+# ==============================================================================
+
+# Blog content can be reviewed by content team
+/content/ @v1rus96
+/posts/ @v1rus96
+
+# Documentation
+/docs/ @v1rus96
+/README.md @v1rus96
+
+# ==============================================================================
+# DEPLOYMENT & INFRASTRUCTURE
+# ==============================================================================
+
+# Deployment configuration
+/vercel.json @v1rus96
+/Dockerfile @v1rus96
+/docker-compose.yml @v1rus96
+
+# CI/CD workflows
+/.github/workflows/ @v1rus96
+
+# ==============================================================================
+# SECURITY-CRITICAL FILES
+# ==============================================================================
+
+# These files require admin/security review
+/SECURITY.md @v1rus96
+/.env.example @v1rus96
+/middleware.ts @v1rus96
+
+# ==============================================================================
+# NOTES FOR FUTURE EXPANSION
+# ==============================================================================
+
+# When adding team members, consider these ownership patterns:
+# 
+# Frontend Team:
+# /src/components/ @frontend-team
+# /src/styles/ @frontend-team
+# *.css @frontend-team
+# *.scss @frontend-team
+# 
+# Backend Team:
+# /src/app/api/ @backend-team
+# /src/lib/ @backend-team
+# /prisma/ @backend-team
+# 
+# DevOps Team:
+# /.github/workflows/ @devops-team
+# /vercel.json @devops-team
+# /Dockerfile @devops-team
+# 
+# Content Team:
+# /content/ @content-team
+# /posts/ @content-team
+# *.md @content-team

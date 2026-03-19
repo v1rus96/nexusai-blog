@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # NPM dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    reviewers:
+      - "v1rus96"
+    assignees:
+      - "v1rus96"
+    labels:
+      - "dependencies"
+      - "area:deps"
+
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday" 
+      time: "09:00"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    reviewers:
+      - "v1rus96"
+    assignees:
+      - "v1rus96"
+    labels:
+      - "dependencies"
+      - "area:github-actions"

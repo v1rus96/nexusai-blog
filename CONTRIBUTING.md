@@ -6,19 +6,27 @@ Welcome! This guide covers how we work. It's short on purpose — we're a small 
 
 ## Branching Strategy
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Production-ready code. Protected — no direct pushes. |
-| `develop` | Integration branch. PRs merge here first when used. |
-| `feature/<name>` | New features. Branch from `main` or `develop`. |
-| `fix/<name>` | Bug fixes. |
-| `hotfix/<name>` | Urgent production fixes. Branch from `main`, merge back to `main`. |
-| `chore/<name>` | Refactors, deps, CI, docs — no behavior change. |
+| Branch | Purpose | Protection |
+|--------|---------|------------|
+| `main` | Production-ready code. **Protected** — no direct pushes. | ✅ Branch protection enabled |
+| `feature/<name>` | New features. Branch from `main`. | Standard workflow |
+| `fix/<name>` | Bug fixes. | Standard workflow |
+| `hotfix/<name>` | Urgent production fixes. Branch from `main`. | Requires admin approval |
+| `chore/<name>` | Refactors, deps, CI, docs — no behavior change. | Standard workflow |
+| `docs/<name>` | Documentation updates only. | Standard workflow |
 
 **Naming rules:**
 - All lowercase, hyphens only: `feature/add-search-bar`
 - Keep names short and descriptive
 - Include issue number when applicable: `fix/42-broken-nav`
+
+**Branch Protection Rules (enforced on `main`):**
+- ✅ Require pull request reviews (minimum 1 approval)
+- ✅ Require status checks to pass before merging
+- ✅ Require linear history (squash merge only)
+- ✅ Include administrators (no bypass allowed)
+- ❌ Force pushes disabled
+- ❌ Branch deletions disabled
 
 ---
 
@@ -103,6 +111,30 @@ We use a consistent label system across all repos. See the issue templates for d
 - **Type:** `bug` / `feature` / `task` / `docs` / `refactor` / `security`
 - **Status:** `blocked` / `in-progress` / `in-review` / `ready`
 - **Agent:** `agent: assigned` / `agent: human`
+
+---
+
+## Security & Quality Gates
+
+**Required Checks (enforced via branch protection):**
+- ✅ **CI Pipeline:** ESLint, TypeScript, build test must pass
+- ✅ **Code Review:** At least 1 approval from CODEOWNERS
+- ✅ **Linear History:** Only squash merges allowed
+- ✅ **No Bypass:** Administrators must follow the same rules
+
+**Code Quality Standards:**
+- No `console.log` or debug statements in production code
+- All TypeScript errors must be resolved
+- ESLint warnings should be addressed or justified
+- Follow conventional commit format for traceability
+- Include tests for new features when applicable
+
+**Security Practices:**
+- Never commit secrets, API keys, or credentials
+- Use environment variables for configuration
+- Review dependencies for known vulnerabilities
+- Follow secure coding practices for authentication/authorization
+- Report security issues privately (see SECURITY.md when available)
 
 ---
 
