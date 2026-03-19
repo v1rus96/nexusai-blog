@@ -3,7 +3,7 @@
 **QA Lead:** 🧪 The Agency QA  
 **Date:** 2026-03-19  
 **Scope:** Tawk.to chat widget integration + SVG blog images  
-**Source Specs:** SUPPORT-SYSTEM-SPEC.md, DESIGN-SPEC.md
+**Source Specs:** [SUPPORT-SYSTEM-SPEC.md](../specs/SUPPORT-SYSTEM-SPEC.md), [DESIGN-SPEC.md](../design/DESIGN-SPEC.md)
 
 ---
 

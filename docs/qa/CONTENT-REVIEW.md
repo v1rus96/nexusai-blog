@@ -502,7 +502,7 @@ Same missing optional fields as Article 1.
 
 ## About Page Draft Content
 
-> For use in P1-2 (About Page & Author Bios) from PRODUCTION-SCOPE.md.
+> For use in P1-2 (About Page & Author Bios) from [PRODUCTION-SCOPE.md](../strategy/PRODUCTION-SCOPE.md).
 
 ### Suggested `/about` page copy:
 

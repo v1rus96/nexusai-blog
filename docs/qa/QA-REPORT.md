@@ -3,7 +3,7 @@
 **Date:** 2026-03-19  
 **QA Lead:** The Agency QA Bot  
 **Source:** `/data/ai-blockchain-blog/`  
-**Scope:** PRODUCTION-SCOPE.md acceptance criteria  
+**Scope:** [PRODUCTION-SCOPE.md](../strategy/PRODUCTION-SCOPE.md) acceptance criteria  
 
 ---
 
