@@ -10,14 +10,14 @@ export default function AuthorCard({ compact = false }: { compact?: boolean }) {
           compact ? "w-12 h-12 text-lg" : "w-16 h-16 text-2xl"
         }`}
       >
-        N
+        T
       </div>
       <div>
         <p className={`font-bold text-gray-900 dark:text-gray-100 ${compact ? "text-lg" : "text-xl"}`}>
-          NexusAI Team
+          LionTech AI Team
         </p>
         {!compact && (
-          <p className="text-sm text-blue-600 dark:text-blue-400 mb-1">NexusAI Team</p>
+          <p className="text-sm text-blue-600 dark:text-blue-400 mb-1">TechLion Blog</p>
         )}
         <p className={`text-gray-600 dark:text-gray-400 leading-relaxed ${compact ? "text-sm" : "text-sm"}`}>
           {compact

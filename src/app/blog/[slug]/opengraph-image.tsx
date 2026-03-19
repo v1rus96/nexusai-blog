@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getPostBySlug, getAllSlugs } from "@/lib/posts";
 
-export const alt = "NexusAI Blog";
+export const alt = "TechLion Blog";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -13,7 +13,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  const title = post?.title ?? "NexusAI Blog";
+  const title = post?.title ?? "TechLion Blog";
   const category = post?.category ?? "";
   const readingTime = post?.readingTime ?? "";
   const titleSize = title.length <= 40 ? 56 : 48;
@@ -113,7 +113,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              {/* N logo */}
+              {/* T logo */}
               <div
                 style={{
                   width: 32,
@@ -128,10 +128,10 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
                   fontWeight: 700,
                 }}
               >
-                N
+                T
               </div>
               <span style={{ fontSize: 18, fontWeight: 500, color: "#9CA3AF" }}>
-                NexusAI Blog
+                TechLion Blog
               </span>
             </div>
             <span style={{ fontSize: 14, color: "#6B7280" }}>

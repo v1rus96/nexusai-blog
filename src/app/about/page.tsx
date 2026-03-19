@@ -7,7 +7,7 @@ import AuthorCard from "@/components/AuthorCard";
 export const metadata: Metadata = {
   title: `About — ${SITE_NAME}`,
   description:
-    "Meet the team behind NexusAI Blog — exploring the frontier of AI and blockchain technology.",
+    "Meet the team behind TechLion Blog by LionTech AI — exploring the frontier of AI and blockchain technology.",
   alternates: { canonical: "/about" },
 };
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="text-center pt-16 sm:pt-20 mb-16">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 animate-gradient-text">
-          About NexusAI
+          About TechLion
         </h1>
         <p className="text-lg text-gray-500 dark:text-gray-400 mt-4">
           Where AI Meets Blockchain
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Our Mission</h2>
         </div>
         <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-[17px]">
-          NexusAI Blog exists because the intersection of artificial intelligence and decentralized
+          TechLion Blog by LionTech AI exists because the intersection of artificial intelligence and decentralized
           technology is one of the most consequential spaces in tech right now — and most of the
           coverage is either hype-driven clickbait or impenetrable academic papers. We think
           there&apos;s room for something in between: insightful, honest analysis for people who

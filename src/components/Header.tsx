@@ -37,7 +37,7 @@ export default function Header() {
           className="text-lg font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
         >
           <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-blue-500/20">
-            N
+            T
           </span>
           <span className="hidden sm:inline">{SITE_NAME}</span>
         </Link>

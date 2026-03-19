@@ -50,7 +50,7 @@ export default async function OGImage() {
             color: "white",
           }}
         >
-          N
+          T
         </div>
 
         {/* Title */}

@@ -21,7 +21,7 @@ export default function Icon() {
           fontFamily: "Inter, sans-serif",
         }}
       >
-        N
+        T
       </div>
     ),
     { ...size }

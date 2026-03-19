@@ -47,7 +47,7 @@ export function getAllPosts(): PostMeta[] {
       category: data.category ?? "",
       tags: Array.isArray(data.tags) ? data.tags : [],
       image: data.image ?? "",
-      author: data.author ?? "NexusAI Team",
+      author: data.author ?? "LionTech AI Team",
       readingTime: rt.text,
     };
   });
@@ -68,7 +68,7 @@ export function getPostBySlug(slug: string): Post | null {
     category: data.category ?? "",
     tags: Array.isArray(data.tags) ? data.tags : [],
     image: data.image ?? "",
-    author: data.author ?? "NexusAI Team",
+    author: data.author ?? "LionTech AI Team",
     readingTime: rt.text,
     content,
   };
