@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { SITE_NAME, CATEGORIES } from "@/lib/constants";
 import ThemeToggle from "./ThemeToggle";
+import ReadingStreak from "./ReadingStreak";
+import { TrophyIcon } from "./AchievementBadges";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -64,13 +66,17 @@ export default function Header() {
           >
             RSS
           </Link>
-          <div className="ml-2 pl-2 border-l border-black/[0.08] dark:border-white/[0.08]">
+          <div className="ml-2 pl-2 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center gap-2">
+            <ReadingStreak />
+            <TrophyIcon />
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile */}
         <div className="flex sm:hidden items-center gap-1">
+          <ReadingStreak />
+          <TrophyIcon />
           <ThemeToggle />
           <button
             onClick={() => setMenuOpen(!menuOpen)}

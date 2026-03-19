@@ -11,6 +11,11 @@ import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import TableOfContents from "@/components/TableOfContents";
 import AuthorCard from "@/components/AuthorCard";
+import ArticleReactions from "@/components/ArticleReactions";
+import ArticleQuiz from "@/components/ArticleQuiz";
+import ArticleReadTracker from "@/components/ArticleReadTracker";
+import CodeCopyWrapper from "@/components/CodeCopyWrapper";
+import { quizzes } from "@/data/quizzes";
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -88,7 +93,9 @@ const mdxComponents = {
     <code className="bg-blue-600/[0.08] dark:bg-white/[0.06] rounded-md px-2 py-1 text-[0.875em] font-mono text-blue-800 dark:text-blue-300" {...props} />
   ),
   pre: (props: React.ComponentProps<"pre">) => (
-    <pre className="bg-gray-100 dark:bg-[#0D1117] border border-black/[0.08] dark:border-white/[0.06] rounded-xl p-6 overflow-x-auto my-8 text-[14px] leading-[1.6]" {...props} />
+    <CodeCopyWrapper>
+      <pre className="bg-gray-100 dark:bg-[#0D1117] border border-black/[0.08] dark:border-white/[0.06] rounded-xl p-6 overflow-x-auto my-8 text-[14px] leading-[1.6]" {...props} />
+    </CodeCopyWrapper>
   ),
   blockquote: (props: React.ComponentProps<"blockquote">) => (
     <blockquote className="border-l-3 border-blue-600/40 dark:border-blue-500/50 pl-6 italic my-10 text-gray-600 dark:text-gray-400 bg-blue-500/[0.05] dark:bg-blue-500/[0.03] py-4 pr-4 rounded-r-xl" {...props} />
@@ -245,6 +252,17 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         )}
+
+        {/* Reactions */}
+        <ArticleReactions slug={slug} />
+
+        {/* Quiz */}
+        {quizzes[slug] && quizzes[slug].length > 0 && (
+          <ArticleQuiz slug={slug} questions={quizzes[slug]} />
+        )}
+
+        {/* Read tracker */}
+        <ArticleReadTracker slug={slug} />
 
         {/* Author Card */}
         <div className="mt-10">
