@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" rx="12" fill="#0F1117"/>
+  <text x="400" y="38" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="16" font-weight="bold">How AI Model Tokenization Works</text>
+
+  <!-- Step 1: Train Model -->
+  <rect x="40" y="120" width="150" height="160" rx="10" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="115" y="155" text-anchor="middle" fill="#93C5FD" font-family="sans-serif" font-size="13" font-weight="bold">1. Train Model</text>
+  <!-- Neural net icon -->
+  <g transform="translate(115,210)">
+    <circle cx="-20" cy="-15" r="5" fill="#3B82F6" opacity="0.7"/>
+    <circle cx="-20" cy="15" r="5" fill="#3B82F6" opacity="0.7"/>
+    <circle cx="0" cy="0" r="6" fill="#3B82F6" opacity="0.9"/>
+    <circle cx="20" cy="-15" r="5" fill="#3B82F6" opacity="0.7"/>
+    <circle cx="20" cy="15" r="5" fill="#3B82F6" opacity="0.7"/>
+    <line x1="-15" y1="-15" x2="-5" y2="0" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+    <line x1="-15" y1="15" x2="-5" y2="0" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+    <line x1="5" y1="0" x2="15" y2="-15" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+    <line x1="5" y1="0" x2="15" y2="15" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="115" y="256" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">Build &amp; train the</text>
+  <text x="115" y="270" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">ML model with data</text>
+
+  <!-- Arrow 1→2 -->
+  <g fill="#06B6D4" opacity="0.6">
+    <polygon points="205,200 220,192 220,208"/>
+    <line x1="190" y1="200" x2="218" y2="200" stroke="#06B6D4" stroke-width="2"/>
+  </g>
+
+  <!-- Step 2: Tokenize -->
+  <rect x="235" y="120" width="150" height="160" rx="10" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="310" y="155" text-anchor="middle" fill="#C4B5FD" font-family="sans-serif" font-size="13" font-weight="bold">2. Tokenize</text>
+  <!-- Token/split icon -->
+  <g transform="translate(310,210)">
+    <circle r="20" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#8B5CF6" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#8B5CF6" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+    <text x="-8" y="-4" fill="#C4B5FD" font-family="monospace" font-size="9">T1</text>
+    <text x="3" y="-4" fill="#C4B5FD" font-family="monospace" font-size="9">T2</text>
+    <text x="-8" y="12" fill="#C4B5FD" font-family="monospace" font-size="9">T3</text>
+    <text x="3" y="12" fill="#C4B5FD" font-family="monospace" font-size="9">T4</text>
+  </g>
+  <text x="310" y="256" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">Fractionalize into</text>
+  <text x="310" y="270" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">on-chain tokens</text>
+
+  <!-- Arrow 2→3 -->
+  <g fill="#06B6D4" opacity="0.6">
+    <polygon points="400,200 415,192 415,208"/>
+    <line x1="385" y1="200" x2="413" y2="200" stroke="#06B6D4" stroke-width="2"/>
+  </g>
+
+  <!-- Step 3: List on Marketplace -->
+  <rect x="430" y="120" width="150" height="160" rx="10" fill="#1E293B" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="505" y="148" text-anchor="middle" fill="#67E8F9" font-family="sans-serif" font-size="13" font-weight="bold">3. List on</text>
+  <text x="505" y="165" text-anchor="middle" fill="#67E8F9" font-family="sans-serif" font-size="13" font-weight="bold">Marketplace</text>
+  <!-- Marketplace icon -->
+  <g transform="translate(505,215)">
+    <rect x="-22" y="-18" width="44" height="36" rx="5" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-22" y1="-6" x2="22" y2="-6" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+    <circle cx="-8" cy="6" r="5" fill="#22D3EE" opacity="0.2"/>
+    <circle cx="8" cy="6" r="5" fill="#22D3EE" opacity="0.2"/>
+    <text x="-8" y="9" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="6">$</text>
+    <text x="8" y="9" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="6">$</text>
+  </g>
+  <text x="505" y="256" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">Trade &amp; discover</text>
+  <text x="505" y="270" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">on decentralized DEX</text>
+
+  <!-- Arrow 3→4 -->
+  <g fill="#06B6D4" opacity="0.6">
+    <polygon points="595,200 610,192 610,208"/>
+    <line x1="580" y1="200" x2="608" y2="200" stroke="#06B6D4" stroke-width="2"/>
+  </g>
+
+  <!-- Step 4: Token Holders Access -->
+  <rect x="625" y="120" width="150" height="160" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="700" y="148" text-anchor="middle" fill="#6EE7B7" font-family="sans-serif" font-size="13" font-weight="bold">4. Token Holders</text>
+  <text x="700" y="165" text-anchor="middle" fill="#6EE7B7" font-family="sans-serif" font-size="13" font-weight="bold">Access</text>
+  <!-- Key/access icon -->
+  <g transform="translate(700,215)">
+    <circle r="12" fill="none" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+    <circle r="5" fill="#34D399" opacity="0.3"/>
+    <line x1="10" y1="5" x2="25" y2="5" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+    <line x1="20" y1="5" x2="20" y2="12" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+    <line x1="25" y1="5" x2="25" y2="10" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <text x="700" y="256" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">Use, govern &amp; earn</text>
+  <text x="700" y="270" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="10">from the AI model</text>
+
+  <!-- Bottom legend -->
+  <text x="400" y="340" text-anchor="middle" fill="#64748B" font-family="sans-serif" font-size="11">Ownership, access rights, and revenue all tracked transparently on-chain</text>
+
+  <!-- Bottom key items -->
+  <g transform="translate(200,370)">
+    <circle r="4" fill="#3B82F6" opacity="0.7"/>
+    <text x="10" y="4" fill="#94A3B8" font-family="sans-serif" font-size="10">Ownership Tokens</text>
+  </g>
+  <g transform="translate(370,370)">
+    <circle r="4" fill="#8B5CF6" opacity="0.7"/>
+    <text x="10" y="4" fill="#94A3B8" font-family="sans-serif" font-size="10">Access Tokens</text>
+  </g>
+  <g transform="translate(510,370)">
+    <circle r="4" fill="#34D399" opacity="0.7"/>
+    <text x="10" y="4" fill="#94A3B8" font-family="sans-serif" font-size="10">Governance Tokens</text>
+  </g>
+</svg>

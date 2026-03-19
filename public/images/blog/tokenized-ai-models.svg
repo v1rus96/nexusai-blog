@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="tam-glow-left" cx="25%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="tam-glow-right" cx="75%" cy="55%" r="35%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="tam-glow-center" cx="50%" cy="50%" r="25%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="tam-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tam-glow-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="tam-grad-blue-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="tam-grad-cyan-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="tam-grad-violet-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A0A0F" />
+  <rect width="1200" height="630" fill="url(#tam-glow-left)" />
+  <rect width="1200" height="630" fill="url(#tam-glow-right)" />
+  <rect width="1200" height="630" fill="url(#tam-glow-center)" />
+
+  <!-- Faint grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630" /><line x1="60" y1="0" x2="60" y2="630" />
+    <line x1="120" y1="0" x2="120" y2="630" /><line x1="180" y1="0" x2="180" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" /><line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="360" y1="0" x2="360" y2="630" /><line x1="420" y1="0" x2="420" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" /><line x1="540" y1="0" x2="540" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" /><line x1="660" y1="0" x2="660" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" /><line x1="780" y1="0" x2="780" y2="630" />
+    <line x1="840" y1="0" x2="840" y2="630" /><line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" /><line x1="1020" y1="0" x2="1020" y2="630" />
+    <line x1="1080" y1="0" x2="1080" y2="630" /><line x1="1140" y1="0" x2="1140" y2="630" />
+    <line x1="0" y1="63" x2="1200" y2="63" /><line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="189" x2="1200" y2="189" /><line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="315" x2="1200" y2="315" /><line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="441" x2="1200" y2="441" /><line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="0" y1="567" x2="1200" y2="567" />
+  </g>
+
+  <!-- Fragmented neural network (center-left) -->
+  <g filter="url(#tam-glow)">
+    <!-- Core neural nodes - scattered/fragmented -->
+    <circle cx="350" cy="200" r="12" fill="#3B82F6" opacity="0.9" />
+    <circle cx="420" cy="280" r="10" fill="#3B82F6" opacity="0.8" />
+    <circle cx="310" cy="320" r="11" fill="#3B82F6" opacity="0.85" />
+    <circle cx="480" cy="190" r="9" fill="#3B82F6" opacity="0.7" />
+    <circle cx="540" cy="310" r="12" fill="#3B82F6" opacity="0.9" />
+    <circle cx="380" cy="400" r="10" fill="#3B82F6" opacity="0.8" />
+    <circle cx="260" cy="240" r="8" fill="#3B82F6" opacity="0.7" />
+    <circle cx="500" cy="400" r="9" fill="#3B82F6" opacity="0.75" />
+    <circle cx="600" cy="230" r="11" fill="#3B82F6" opacity="0.85" />
+    <circle cx="450" cy="350" r="8" fill="#3B82F6" opacity="0.7" />
+
+    <!-- Fragmented connections (dashed/broken lines suggesting splitting) -->
+    <g stroke="#3B82F6" stroke-width="1" opacity="0.3">
+      <line x1="362" y1="200" x2="408" y2="275" stroke-dasharray="4,6" />
+      <line x1="345" y1="212" x2="315" y2="310" stroke-dasharray="4,6" />
+      <line x1="430" y1="278" x2="528" y2="308" stroke-dasharray="4,6" />
+      <line x1="485" y1="198" x2="590" y2="225" stroke-dasharray="4,6" />
+      <line x1="265" y1="248" x2="305" y2="312" stroke-dasharray="4,6" />
+      <line x1="390" y1="398" x2="490" y2="398" stroke-dasharray="4,6" />
+      <line x1="425" y1="290" x2="445" y2="342" stroke-dasharray="4,6" />
+      <line x1="540" y1="322" x2="505" y2="392" stroke-dasharray="4,6" />
+    </g>
+
+    <!-- Break lines (showing fragmentation) -->
+    <g stroke="#06B6D4" stroke-width="1.5" opacity="0.5">
+      <line x1="380" y1="150" x2="430" y2="450" stroke-dasharray="2,8" />
+      <line x1="500" y1="160" x2="460" y2="440" stroke-dasharray="2,8" />
+    </g>
+  </g>
+
+  <!-- Token/coin symbols scattered around the network -->
+  <g filter="url(#tam-glow)">
+    <!-- Token 1 - top right area -->
+    <g transform="translate(780,180)">
+      <circle r="28" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.8" />
+      <circle r="20" fill="#8B5CF6" opacity="0.15" />
+      <text x="0" y="6" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="18" font-weight="bold">T</text>
+    </g>
+
+    <!-- Token 2 - right -->
+    <g transform="translate(900,320)">
+      <circle r="24" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.8" />
+      <circle r="17" fill="#06B6D4" opacity="0.15" />
+      <text x="0" y="6" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="16" font-weight="bold">◆</text>
+    </g>
+
+    <!-- Token 3 - bottom right -->
+    <g transform="translate(830,440)">
+      <circle r="22" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.7" />
+      <circle r="15" fill="#3B82F6" opacity="0.15" />
+      <text x="0" y="5" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="14" font-weight="bold">$</text>
+    </g>
+
+    <!-- Token 4 - far right -->
+    <g transform="translate(1000,230)">
+      <circle r="20" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6" />
+      <circle r="14" fill="#8B5CF6" opacity="0.1" />
+      <text x="0" y="5" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="13" font-weight="bold">⬡</text>
+    </g>
+
+    <!-- Token 5 - small floating -->
+    <g transform="translate(720,380)">
+      <circle r="16" fill="none" stroke="#06B6D4" stroke-width="1.5" opacity="0.6" />
+      <circle r="10" fill="#06B6D4" opacity="0.1" />
+      <text x="0" y="4" text-anchor="middle" fill="#06B6D4" font-family="monospace" font-size="11" font-weight="bold">◈</text>
+    </g>
+
+    <!-- Token 6 - top -->
+    <g transform="translate(660,140)">
+      <circle r="18" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.6" />
+      <circle r="12" fill="#3B82F6" opacity="0.1" />
+      <text x="0" y="5" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="12" font-weight="bold">T</text>
+    </g>
+  </g>
+
+  <!-- Flow arrows from network fragments to tokens -->
+  <g stroke="url(#tam-grad-violet-cyan)" stroke-width="1.5" opacity="0.4" fill="none">
+    <path d="M610,230 Q660,200 750,185" />
+    <path d="M550,315 Q650,330 870,325" />
+    <path d="M510,400 Q640,430 805,440" />
+    <path d="M600,225 Q630,170 645,148" />
+    <path d="M545,318 Q630,365 705,378" />
+  </g>
+
+  <!-- Animated particles along flow paths -->
+  <g fill="#06B6D4" opacity="0.7">
+    <circle r="2.5">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M610,230 Q660,200 750,185" />
+    </circle>
+    <circle r="2">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M550,315 Q650,330 870,325" />
+    </circle>
+    <circle r="2">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M510,400 Q640,430 805,440" />
+    </circle>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#06B6D4" opacity="0.5">
+    <circle cx="200" cy="170" r="1.5"><animate attributeName="cy" values="170;160;170" dur="2.5s" repeatCount="indefinite" /></circle>
+    <circle cx="700" cy="260" r="2"><animate attributeName="cy" values="260;250;260" dur="2s" repeatCount="indefinite" /></circle>
+    <circle cx="950" cy="400" r="1.5"><animate attributeName="cx" values="950;960;950" dur="3s" repeatCount="indefinite" /></circle>
+    <circle cx="150" cy="400" r="2"><animate attributeName="cy" values="400;390;400" dur="2.2s" repeatCount="indefinite" /></circle>
+    <circle cx="1050" cy="170" r="1.5"><animate attributeName="cy" values="170;180;170" dur="2.8s" repeatCount="indefinite" /></circle>
+  </g>
+
+  <!-- Subtle outer decorative elements -->
+  <g stroke="#8B5CF6" stroke-width="0.5" opacity="0.15" fill="none">
+    <polygon points="120,480 140,510 100,510" />
+    <polygon points="1060,130 1080,160 1040,160" />
+    <rect x="130" y="130" width="20" height="20" rx="2" />
+    <rect x="1020" y="450" width="25" height="25" rx="3" />
+  </g>
+</svg>

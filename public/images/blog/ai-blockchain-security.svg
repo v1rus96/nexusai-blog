@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="sec-glow-left" cx="30%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="sec-glow-right" cx="70%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="sec-glow-center" cx="50%" cy="50%" r="25%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="sec-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sec-glow-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="sec-shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A0A0F" />
+  <rect width="1200" height="630" fill="url(#sec-glow-left)" />
+  <rect width="1200" height="630" fill="url(#sec-glow-right)" />
+  <rect width="1200" height="630" fill="url(#sec-glow-center)" />
+
+  <!-- Faint grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630" /><line x1="60" y1="0" x2="60" y2="630" />
+    <line x1="120" y1="0" x2="120" y2="630" /><line x1="180" y1="0" x2="180" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" /><line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="360" y1="0" x2="360" y2="630" /><line x1="420" y1="0" x2="420" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" /><line x1="540" y1="0" x2="540" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" /><line x1="660" y1="0" x2="660" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" /><line x1="780" y1="0" x2="780" y2="630" />
+    <line x1="840" y1="0" x2="840" y2="630" /><line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" /><line x1="1020" y1="0" x2="1020" y2="630" />
+    <line x1="1080" y1="0" x2="1080" y2="630" /><line x1="1140" y1="0" x2="1140" y2="630" />
+    <line x1="0" y1="63" x2="1200" y2="63" /><line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="189" x2="1200" y2="189" /><line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="315" x2="1200" y2="315" /><line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="441" x2="1200" y2="441" /><line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="0" y1="567" x2="1200" y2="567" />
+  </g>
+
+  <!-- Central shield shape -->
+  <g filter="url(#sec-glow-lg)" transform="translate(600,300)">
+    <!-- Outer shield glow -->
+    <path d="M0,-160 L120,-100 L120,40 L0,140 L-120,40 L-120,-100 Z" 
+          fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.35;0.2" dur="3s" repeatCount="indefinite" />
+    </path>
+    <!-- Main shield -->
+    <path d="M0,-140 L105,-85 L105,35 L0,120 L-105,35 L-105,-85 Z" 
+          fill="#0A0A0F" stroke="url(#sec-shield-grad)" stroke-width="2.5" />
+    <!-- Inner shield -->
+    <path d="M0,-110 L82,-65 L82,25 L0,95 L-82,25 L-82,-65 Z" 
+          fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.3" />
+
+    <!-- Lock body -->
+    <rect x="-25" y="-15" width="50" height="40" rx="6" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.8" />
+    <!-- Lock shackle -->
+    <path d="M-15,-15 L-15,-35 Q-15,-50 0,-50 Q15,-50 15,-35 L15,-15" 
+          fill="none" stroke="#06B6D4" stroke-width="2.5" opacity="0.8" />
+    <!-- Keyhole -->
+    <circle cx="0" cy="2" r="6" fill="#06B6D4" opacity="0.5" />
+    <rect x="-2" y="5" width="4" height="12" rx="1" fill="#06B6D4" opacity="0.5" />
+  </g>
+
+  <!-- Circuit pattern radiating from shield -->
+  <g stroke="#3B82F6" stroke-width="1.2" opacity="0.4" fill="none" filter="url(#sec-glow)">
+    <!-- Left circuits -->
+    <path d="M495,220 L400,220 L400,180 L320,180" />
+    <circle cx="320" cy="180" r="4" fill="#3B82F6" opacity="0.6" />
+    <path d="M495,280 L380,280 L380,340 L280,340" />
+    <circle cx="280" cy="340" r="4" fill="#3B82F6" opacity="0.6" />
+    <path d="M495,250 L430,250 L430,150 L350,150" />
+    <circle cx="350" cy="150" r="3" fill="#3B82F6" opacity="0.5" />
+    <path d="M500,350 L420,350 L420,420 L310,420" />
+    <circle cx="310" cy="420" r="4" fill="#3B82F6" opacity="0.6" />
+    <path d="M500,380 L460,380 L460,460 L360,460" />
+    <circle cx="360" cy="460" r="3" fill="#3B82F6" opacity="0.5" />
+
+    <!-- Right circuits -->
+    <path d="M705,220 L800,220 L800,180 L880,180" />
+    <circle cx="880" cy="180" r="4" fill="#8B5CF6" opacity="0.6" />
+    <path d="M705,280 L820,280 L820,340 L920,340" />
+    <circle cx="920" cy="340" r="4" fill="#8B5CF6" opacity="0.6" />
+    <path d="M705,250 L770,250 L770,150 L850,150" />
+    <circle cx="850" cy="150" r="3" fill="#8B5CF6" opacity="0.5" />
+    <path d="M700,350 L780,350 L780,420 L890,420" />
+    <circle cx="890" cy="420" r="4" fill="#8B5CF6" opacity="0.6" />
+    <path d="M700,380 L740,380 L740,460 L840,460" />
+    <circle cx="840" cy="460" r="3" fill="#8B5CF6" opacity="0.5" />
+
+    <!-- Top circuits -->
+    <path d="M560,165 L560,100 L480,100" />
+    <circle cx="480" cy="100" r="3" fill="#06B6D4" opacity="0.5" />
+    <path d="M640,165 L640,100 L720,100" />
+    <circle cx="720" cy="100" r="3" fill="#06B6D4" opacity="0.5" />
+    <path d="M600,160 L600,80" />
+    <circle cx="600" cy="80" r="4" fill="#06B6D4" opacity="0.6" />
+
+    <!-- Bottom circuits -->
+    <path d="M560,420 L560,490 L480,490" />
+    <circle cx="480" cy="490" r="3" fill="#06B6D4" opacity="0.5" />
+    <path d="M640,420 L640,490 L720,490" />
+    <circle cx="720" cy="490" r="3" fill="#06B6D4" opacity="0.5" />
+    <path d="M600,425 L600,510" />
+    <circle cx="600" cy="510" r="4" fill="#06B6D4" opacity="0.6" />
+  </g>
+
+  <!-- Small blockchain blocks at circuit endpoints -->
+  <g filter="url(#sec-glow)">
+    <g transform="translate(200,180)">
+      <rect x="-22" y="-15" width="44" height="30" rx="5" fill="#0A0A0F" stroke="#3B82F6" stroke-width="1.5" opacity="0.6" />
+      <text x="0" y="3" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="6" opacity="0.5">0xA3</text>
+    </g>
+    <g transform="translate(180,340)">
+      <rect x="-22" y="-15" width="44" height="30" rx="5" fill="#0A0A0F" stroke="#3B82F6" stroke-width="1.5" opacity="0.6" />
+      <text x="0" y="3" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="6" opacity="0.5">0x7B</text>
+    </g>
+    <g transform="translate(1000,180)">
+      <rect x="-22" y="-15" width="44" height="30" rx="5" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6" />
+      <text x="0" y="3" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="6" opacity="0.5">0xE9</text>
+    </g>
+    <g transform="translate(1020,340)">
+      <rect x="-22" y="-15" width="44" height="30" rx="5" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6" />
+      <text x="0" y="3" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="6" opacity="0.5">0x4D</text>
+    </g>
+  </g>
+
+  <!-- Animated scanning line on shield -->
+  <g transform="translate(600,300)" clip-path="url(#shield-clip)">
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#06B6D4" stroke-width="1" opacity="0.3">
+      <animate attributeName="y1" values="-130;110;-130" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="-130;110;-130" dur="4s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#06B6D4" opacity="0.5">
+    <circle cx="150" cy="250" r="1.5"><animate attributeName="cy" values="250;240;250" dur="2.5s" repeatCount="indefinite" /></circle>
+    <circle cx="1050" cy="280" r="2"><animate attributeName="cy" values="280;270;280" dur="2s" repeatCount="indefinite" /></circle>
+    <circle cx="300" cy="500" r="1.5"><animate attributeName="cx" values="300;310;300" dur="3s" repeatCount="indefinite" /></circle>
+    <circle cx="900" cy="500" r="2"><animate attributeName="cx" values="900;890;900" dur="2.2s" repeatCount="indefinite" /></circle>
+    <circle cx="600" cy="550" r="1.5"><animate attributeName="cy" values="550;540;550" dur="2.8s" repeatCount="indefinite" /></circle>
+  </g>
+
+  <!-- Decorative corner elements -->
+  <g stroke="#8B5CF6" stroke-width="0.5" opacity="0.15" fill="none">
+    <polygon points="100,530 120,560 80,560" />
+    <polygon points="1100,100 1120,130 1080,130" />
+    <rect x="110" y="90" width="20" height="20" rx="2" />
+    <rect x="1050" y="500" width="25" height="25" rx="3" />
+  </g>
+</svg>

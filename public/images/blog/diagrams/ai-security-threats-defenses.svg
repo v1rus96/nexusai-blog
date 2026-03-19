@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" rx="12" fill="#0F1117"/>
+  <text x="400" y="38" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="16" font-weight="bold">AI Security: Threats vs. Blockchain Defenses</text>
+
+  <!-- Left column header: Threats -->
+  <rect x="40" y="60" width="330" height="40" rx="8" fill="#7F1D1D" opacity="0.3"/>
+  <text x="205" y="86" text-anchor="middle" fill="#FCA5A5" font-family="sans-serif" font-size="14" font-weight="bold">⚠️  Threats</text>
+
+  <!-- Threat 1: Adversarial Attacks -->
+  <rect x="40" y="112" width="330" height="55" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="137" fill="#FCA5A5" font-family="sans-serif" font-size="12" font-weight="bold">Adversarial Attacks</text>
+  <text x="60" y="155" fill="#94A3B8" font-family="sans-serif" font-size="10">Crafted inputs that fool AI models into wrong outputs</text>
+
+  <!-- Threat 2: Model Poisoning -->
+  <rect x="40" y="177" width="330" height="55" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="202" fill="#FCA5A5" font-family="sans-serif" font-size="12" font-weight="bold">Model Poisoning</text>
+  <text x="60" y="220" fill="#94A3B8" font-family="sans-serif" font-size="10">Corrupted training data creates backdoors in models</text>
+
+  <!-- Threat 3: Prompt Injection -->
+  <rect x="40" y="242" width="330" height="55" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="267" fill="#FCA5A5" font-family="sans-serif" font-size="12" font-weight="bold">Prompt Injection</text>
+  <text x="60" y="285" fill="#94A3B8" font-family="sans-serif" font-size="10">Hidden instructions hijack LLM-based agents</text>
+
+  <!-- Threat 4: Deepfake Fraud -->
+  <rect x="40" y="307" width="330" height="55" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1" opacity="0.8"/>
+  <text x="60" y="332" fill="#FCA5A5" font-family="sans-serif" font-size="12" font-weight="bold">Deepfake Identity Fraud</text>
+  <text x="60" y="350" fill="#94A3B8" font-family="sans-serif" font-size="10">Synthetic media bypasses KYC &amp; identity checks</text>
+
+  <!-- Center arrows -->
+  <g fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.5">
+    <path d="M375,139 L425,139" marker-end="url(#arrow-head)"/>
+    <path d="M375,204 L425,204" marker-end="url(#arrow-head)"/>
+    <path d="M375,269 L425,269" marker-end="url(#arrow-head)"/>
+    <path d="M375,334 L425,334" marker-end="url(#arrow-head)"/>
+  </g>
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-head" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#06B6D4" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- VS divider text -->
+  <text x="400" y="88" text-anchor="middle" fill="#06B6D4" font-family="sans-serif" font-size="11" font-weight="bold" opacity="0.6">→</text>
+
+  <!-- Right column header: Blockchain Defenses -->
+  <rect x="430" y="60" width="330" height="40" rx="8" fill="#14532D" opacity="0.3"/>
+  <text x="595" y="86" text-anchor="middle" fill="#86EFAC" font-family="sans-serif" font-size="14" font-weight="bold">🛡️  Blockchain Defenses</text>
+
+  <!-- Defense 1: Immutable Audit Trails -->
+  <rect x="430" y="112" width="330" height="55" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <text x="450" y="137" fill="#86EFAC" font-family="sans-serif" font-size="12" font-weight="bold">Immutable Audit Trails</text>
+  <text x="450" y="155" fill="#94A3B8" font-family="sans-serif" font-size="10">Tamper-proof logs detect anomalous AI behavior</text>
+
+  <!-- Defense 2: Decentralized Validation -->
+  <rect x="430" y="177" width="330" height="55" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <text x="450" y="202" fill="#86EFAC" font-family="sans-serif" font-size="12" font-weight="bold">Decentralized Validation</text>
+  <text x="450" y="220" fill="#94A3B8" font-family="sans-serif" font-size="10">Multi-model consensus catches poisoned outputs</text>
+
+  <!-- Defense 3: ZK Proofs -->
+  <rect x="430" y="242" width="330" height="55" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <text x="450" y="267" fill="#86EFAC" font-family="sans-serif" font-size="12" font-weight="bold">Zero-Knowledge Proofs</text>
+  <text x="450" y="285" fill="#94A3B8" font-family="sans-serif" font-size="10">Verify model integrity without exposing weights</text>
+
+  <!-- Defense 4: On-Chain Identity -->
+  <rect x="430" y="307" width="330" height="55" rx="8" fill="#1E293B" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <text x="450" y="332" fill="#86EFAC" font-family="sans-serif" font-size="12" font-weight="bold">On-Chain Identity</text>
+  <text x="450" y="350" fill="#94A3B8" font-family="sans-serif" font-size="10">Cryptographic proof-of-personhood stops Sybils</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="388" text-anchor="middle" fill="#64748B" font-family="sans-serif" font-size="10">Defense-in-depth: no single layer is sufficient — combine all four for robust security</text>
+</svg>
