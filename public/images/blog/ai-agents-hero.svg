@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1a1a3e" />
+      <stop offset="100%" stop-color="#0A0A0F" />
+    </radialGradient>
+    <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-violet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-glow)" />
+
+  <!-- Circuit traces bottom-left -->
+  <g opacity="0.08" stroke="#3B82F6" stroke-width="1" fill="none">
+    <path d="M0 580 L80 580 L80 520 L160 520" />
+    <path d="M0 550 L40 550 L40 490 L120 490 L120 430" />
+    <path d="M0 610 L60 610 L60 560 L140 560 L140 500" />
+  </g>
+
+  <!-- Particle dots -->
+  <g fill="#06B6D4" opacity="0.3">
+    <circle cx="150" cy="120" r="2" /><circle cx="300" cy="80" r="1.5" />
+    <circle cx="450" cy="150" r="1" /><circle cx="700" cy="90" r="2" />
+    <circle cx="900" cy="130" r="1.5" /><circle cx="1050" cy="100" r="1" />
+    <circle cx="200" cy="500" r="1.5" /><circle cx="350" cy="540" r="2" />
+    <circle cx="800" cy="520" r="1" /><circle cx="950" cy="480" r="1.5" />
+    <circle cx="1100" cy="550" r="2" /><circle cx="100" cy="300" r="1" />
+    <circle cx="1080" cy="280" r="1.5" /><circle cx="550" cy="50" r="1" />
+  </g>
+
+  <!-- Connection lines -->
+  <g stroke="url(#line-grad)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5" fill="none">
+    <line x1="300" y1="250" x2="480" y2="200" />
+    <line x1="480" y1="200" x2="600" y2="315" />
+    <line x1="600" y1="315" x2="750" y2="220" />
+    <line x1="600" y1="315" x2="500" y2="430" />
+    <line x1="750" y1="220" x2="900" y2="300" />
+    <line x1="900" y1="300" x2="850" y2="440" />
+    <line x1="500" y1="430" x2="850" y2="440" />
+    <line x1="300" y1="250" x2="350" y2="400" />
+    <line x1="350" y1="400" x2="500" y2="430" />
+  </g>
+
+  <!-- Directional arrows on lines -->
+  <g fill="#3B82F6" opacity="0.6">
+    <polygon points="488,198 478,194 480,204" />
+    <polygon points="608,310 596,320 600,308" />
+    <polygon points="758,222 746,216 748,228" />
+    <polygon points="908,298 896,304 898,292" />
+  </g>
+
+  <!-- Outer nodes -->
+  <!-- Node 1: Gear (top-left) -->
+  <g filter="url(#glow-blue)" transform="translate(300,250)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#3B82F6" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="4" fill="#3B82F6" />
+  </g>
+
+  <!-- Node 2: Brain (top) -->
+  <g filter="url(#glow-blue)" transform="translate(480,200)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <path d="M-8,-8 C-8,-14 0,-16 0,-10 C0,-16 8,-14 8,-8 C8,-2 0,8 0,8 C0,8 -8,-2 -8,-8Z" fill="none" stroke="#06B6D4" stroke-width="1.5" transform="translate(0,-2)" />
+  </g>
+
+  <!-- Node 3: Lightning (right-top) -->
+  <g filter="url(#glow-blue)" transform="translate(750,220)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <path d="M2,-10 L-4,0 L2,0 L-2,10 L6,0 L0,0Z" fill="#06B6D4" />
+  </g>
+
+  <!-- Node 4: Chart (right) -->
+  <g filter="url(#glow-blue)" transform="translate(900,300)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <rect x="-8" y="-2" width="4" height="10" fill="#3B82F6" rx="1" />
+    <rect x="-2" y="-8" width="4" height="16" fill="#8B5CF6" rx="1" />
+    <rect x="4" y="-5" width="4" height="13" fill="#06B6D4" rx="1" />
+  </g>
+
+  <!-- Node 5: Shield (bottom-right) -->
+  <g filter="url(#glow-blue)" transform="translate(850,440)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <path d="M0,-10 L8,-5 L8,3 C8,8 0,12 0,12 C0,12 -8,8 -8,3 L-8,-5Z" fill="none" stroke="#3B82F6" stroke-width="1.5" />
+  </g>
+
+  <!-- Node 6: Data (bottom-left) -->
+  <g filter="url(#glow-blue)" transform="translate(350,400)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <ellipse cx="0" cy="-4" rx="9" ry="4" fill="none" stroke="#06B6D4" stroke-width="1.5" />
+    <path d="M-9,-4 L-9,4 C-9,8 9,8 9,4 L9,-4" fill="none" stroke="#06B6D4" stroke-width="1.5" />
+  </g>
+
+  <!-- Node 7: Code (bottom) -->
+  <g filter="url(#glow-blue)" transform="translate(500,430)">
+    <polygon points="0,-35 30,-17 30,17 0,35 -30,17 -30,-17" fill="#0A0A0F" stroke="#3B82F6" stroke-width="2" />
+    <text x="0" y="4" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="14">&lt;/&gt;</text>
+  </g>
+
+  <!-- Central orchestrator node (larger) -->
+  <g filter="url(#glow-violet)" transform="translate(600,315)">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2.5" />
+    <!-- Violet halo -->
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
+    </polygon>
+    <!-- Inner orchestrator icon -->
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#8B5CF6" stroke-width="2" />
+    <circle cx="0" cy="-8" r="3" fill="#8B5CF6" />
+    <circle cx="7" cy="4" r="3" fill="#3B82F6" />
+    <circle cx="-7" cy="4" r="3" fill="#06B6D4" />
+    <line x1="0" y1="-5" x2="5" y2="2" stroke="#8B5CF6" stroke-width="1" />
+    <line x1="0" y1="-5" x2="-5" y2="2" stroke="#8B5CF6" stroke-width="1" />
+    <line x1="5" y1="2" x2="-5" y2="2" stroke="#3B82F6" stroke-width="1" />
+  </g>
+</svg>

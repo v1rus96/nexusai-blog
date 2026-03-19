@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow-left" cx="30%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="glow-right" cx="70%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="glow-center" cx="50%" cy="50%" r="20%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="bc-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bc-glow-lg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bc-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A0A0F" />
+  <rect width="1200" height="630" fill="url(#glow-left)" />
+  <rect width="1200" height="630" fill="url(#glow-right)" />
+  <rect width="1200" height="630" fill="url(#glow-center)" />
+
+  <!-- Faint grid -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630" /><line x1="60" y1="0" x2="60" y2="630" />
+    <line x1="120" y1="0" x2="120" y2="630" /><line x1="180" y1="0" x2="180" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" /><line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="360" y1="0" x2="360" y2="630" /><line x1="420" y1="0" x2="420" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" /><line x1="540" y1="0" x2="540" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" /><line x1="660" y1="0" x2="660" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" /><line x1="780" y1="0" x2="780" y2="630" />
+    <line x1="840" y1="0" x2="840" y2="630" /><line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" /><line x1="1020" y1="0" x2="1020" y2="630" />
+    <line x1="1080" y1="0" x2="1080" y2="630" /><line x1="1140" y1="0" x2="1140" y2="630" />
+    <line x1="0" y1="63" x2="1200" y2="63" /><line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="189" x2="1200" y2="189" /><line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="315" x2="1200" y2="315" /><line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="441" x2="1200" y2="441" /><line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="0" y1="567" x2="1200" y2="567" />
+  </g>
+
+  <!-- LEFT: Neural network (AI) -->
+  <g filter="url(#bc-glow)">
+    <!-- Layer 1 (input) -->
+    <circle cx="180" cy="180" r="8" fill="#3B82F6" opacity="0.8" />
+    <circle cx="180" cy="260" r="8" fill="#3B82F6" opacity="0.8" />
+    <circle cx="180" cy="340" r="8" fill="#3B82F6" opacity="0.8" />
+    <circle cx="180" cy="420" r="8" fill="#3B82F6" opacity="0.8" />
+
+    <!-- Layer 2 (hidden) -->
+    <circle cx="300" cy="210" r="10" fill="#3B82F6" opacity="0.9" />
+    <circle cx="300" cy="310" r="10" fill="#3B82F6" opacity="0.9" />
+    <circle cx="300" cy="410" r="10" fill="#3B82F6" opacity="0.9" />
+
+    <!-- Layer 3 (hidden) -->
+    <circle cx="420" cy="250" r="10" fill="#3B82F6" />
+    <circle cx="420" cy="350" r="10" fill="#3B82F6" />
+
+    <!-- Connections layer 1→2 -->
+    <g stroke="#3B82F6" stroke-width="0.8" opacity="0.3">
+      <line x1="188" y1="180" x2="290" y2="210" /><line x1="188" y1="180" x2="290" y2="310" /><line x1="188" y1="180" x2="290" y2="410" />
+      <line x1="188" y1="260" x2="290" y2="210" /><line x1="188" y1="260" x2="290" y2="310" /><line x1="188" y1="260" x2="290" y2="410" />
+      <line x1="188" y1="340" x2="290" y2="210" /><line x1="188" y1="340" x2="290" y2="310" /><line x1="188" y1="340" x2="290" y2="410" />
+      <line x1="188" y1="420" x2="290" y2="210" /><line x1="188" y1="420" x2="290" y2="310" /><line x1="188" y1="420" x2="290" y2="410" />
+    </g>
+
+    <!-- Connections layer 2→3 -->
+    <g stroke="#3B82F6" stroke-width="1" opacity="0.4">
+      <line x1="310" y1="210" x2="410" y2="250" /><line x1="310" y1="210" x2="410" y2="350" />
+      <line x1="310" y1="310" x2="410" y2="250" /><line x1="310" y1="310" x2="410" y2="350" />
+      <line x1="310" y1="410" x2="410" y2="250" /><line x1="310" y1="410" x2="410" y2="350" />
+    </g>
+  </g>
+
+  <!-- RIGHT: Blockchain -->
+  <g filter="url(#bc-glow)">
+    <!-- Block 1 -->
+    <g transform="translate(780,200)">
+      <rect x="-35" y="-25" width="70" height="50" rx="8" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="7" opacity="0.6">0xA3F...</text>
+      <rect x="-20" y="5" width="40" height="10" rx="2" fill="#8B5CF6" opacity="0.2" />
+    </g>
+    <!-- Chain link 1→2 -->
+    <line x1="815" y1="200" x2="855" y2="260" stroke="#8B5CF6" stroke-width="2" opacity="0.5" />
+
+    <!-- Block 2 -->
+    <g transform="translate(890,260)">
+      <rect x="-35" y="-25" width="70" height="50" rx="8" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="7" opacity="0.6">0x7B2...</text>
+      <rect x="-20" y="5" width="40" height="10" rx="2" fill="#8B5CF6" opacity="0.2" />
+    </g>
+    <!-- Chain link 2→3 -->
+    <line x1="925" y1="260" x2="935" y2="340" stroke="#8B5CF6" stroke-width="2" opacity="0.5" />
+
+    <!-- Block 3 -->
+    <g transform="translate(970,340)">
+      <rect x="-35" y="-25" width="70" height="50" rx="8" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="7" opacity="0.6">0xE91...</text>
+      <rect x="-20" y="5" width="40" height="10" rx="2" fill="#8B5CF6" opacity="0.2" />
+    </g>
+    <!-- Chain link 3→4 -->
+    <line x1="1005" y1="340" x2="985" y2="420" stroke="#8B5CF6" stroke-width="2" opacity="0.5" />
+
+    <!-- Block 4 -->
+    <g transform="translate(1020,420)">
+      <rect x="-35" y="-25" width="70" height="50" rx="8" fill="#0A0A0F" stroke="#8B5CF6" stroke-width="2" />
+      <text x="0" y="-5" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="7" opacity="0.6">0x4D6...</text>
+      <rect x="-20" y="5" width="40" height="10" rx="2" fill="#8B5CF6" opacity="0.2" />
+    </g>
+  </g>
+
+  <!-- CENTER: Convergence zone -->
+  <g filter="url(#bc-glow-lg)">
+    <!-- Central glow ring -->
+    <circle cx="600" cy="315" r="60" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.3">
+      <animate attributeName="r" values="55;65;55" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="600" cy="315" r="40" fill="none" stroke="#06B6D4" stroke-width="1.5" opacity="0.5" />
+
+    <!-- Convergence connections from AI side -->
+    <g stroke="#06B6D4" stroke-width="1.5" opacity="0.5">
+      <path d="M430,250 Q500,270 560,310" fill="none" />
+      <path d="M430,350 Q500,340 560,320" fill="none" />
+    </g>
+
+    <!-- Convergence connections from Blockchain side -->
+    <g stroke="#06B6D4" stroke-width="1.5" opacity="0.5">
+      <path d="M745,200 Q680,250 640,310" fill="none" />
+      <path d="M855,260 Q740,290 640,315" fill="none" />
+      <path d="M935,340 Q780,340 640,320" fill="none" />
+    </g>
+
+    <!-- Central convergence nodes -->
+    <circle cx="600" cy="315" r="14" fill="#06B6D4" opacity="0.3" />
+    <circle cx="600" cy="315" r="6" fill="#06B6D4" />
+    <circle cx="575" cy="295" r="4" fill="#3B82F6" opacity="0.8" />
+    <circle cx="625" cy="295" r="4" fill="#8B5CF6" opacity="0.8" />
+    <circle cx="575" cy="335" r="4" fill="#8B5CF6" opacity="0.8" />
+    <circle cx="625" cy="335" r="4" fill="#3B82F6" opacity="0.8" />
+  </g>
+
+  <!-- Particles at convergence -->
+  <g fill="#06B6D4" opacity="0.6">
+    <circle cx="590" cy="280" r="2"><animate attributeName="cy" values="280;270;280" dur="2s" repeatCount="indefinite" /></circle>
+    <circle cx="615" cy="350" r="1.5"><animate attributeName="cy" values="350;360;350" dur="2.5s" repeatCount="indefinite" /></circle>
+    <circle cx="560" cy="310" r="1.5"><animate attributeName="cx" values="560;550;560" dur="2s" repeatCount="indefinite" /></circle>
+    <circle cx="640" cy="310" r="2"><animate attributeName="cx" values="640;650;640" dur="2.2s" repeatCount="indefinite" /></circle>
+  </g>
+</svg>

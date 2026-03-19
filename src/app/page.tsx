@@ -1,65 +1,79 @@
-import Image from "next/image";
+import { getAllPosts } from "@/lib/posts";
+import { SITE_TAGLINE } from "@/lib/constants";
+import PostCard from "@/components/PostCard";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
-export default function Home() {
+export default function HomePage() {
+  const posts = getAllPosts();
+  const featured = posts[0];
+  const rest = posts.slice(1);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero */}
+      <section className="relative text-center py-16 sm:py-24 mb-16">
+        {/* Decorative orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-glow-pulse pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-violet-500/10 rounded-full blur-3xl animate-glow-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
+
+        <div className="relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/[0.06] dark:border-white/[0.08] bg-white/[0.6] dark:bg-white/[0.03] backdrop-blur-sm text-sm font-medium text-gray-500 dark:text-gray-400 mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Exploring the future of technology
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-gradient-text leading-tight">
+            {SITE_TAGLINE}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Deep dives into artificial intelligence and blockchain technology —
+            cutting through the hype to find what actually matters.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Featured Post */}
+      {featured && (
+        <section className="mb-16">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-[0.2em]">Featured</span>
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
+          </div>
+          <PostCard post={featured} featured />
+        </section>
+      )}
+
+      {/* Bento Grid */}
+      {rest.length > 0 && (
+        <section className="mb-16">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-[0.2em]">Latest</span>
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {rest.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {posts.length === 0 && (
+        <p className="text-center text-gray-500 py-16">
+          No posts yet. Check back soon!
+        </p>
+      )}
+
+      {/* Newsletter */}
+      <section className="mt-20 mb-8">
+        <NewsletterSignup />
+      </section>
+    </>
   );
 }

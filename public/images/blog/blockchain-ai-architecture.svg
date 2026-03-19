@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="arch-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <linearGradient id="arch-violet" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+    <linearGradient id="arch-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+    <filter id="arch-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0A0A0F" rx="8" />
+
+  <!-- TIER 1: AI Layer (top) -->
+  <g transform="translate(100,30)">
+    <rect x="0" y="0" width="600" height="110" rx="12" fill="rgba(59,130,246,0.06)" stroke="rgba(59,130,246,0.3)" stroke-width="1.5" />
+    
+    <!-- Layer label -->
+    <text x="20" y="30" fill="#3B82F6" font-family="Inter, sans-serif" font-size="14" font-weight="700">AI Layer</text>
+    
+    <!-- Brain icon -->
+    <circle cx="40" cy="70" r="18" fill="rgba(59,130,246,0.1)" stroke="#3B82F6" stroke-width="1.5" filter="url(#arch-glow)" />
+    <path d="M34,66 C34,60 40,58 40,62 C40,58 46,60 46,66 C46,72 40,78 40,78 C40,78 34,72 34,66Z" fill="none" stroke="#3B82F6" stroke-width="1.2" />
+
+    <!-- Sub-components -->
+    <g transform="translate(120,50)">
+      <rect x="0" y="0" width="120" height="40" rx="8" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.2)" stroke-width="1" />
+      <text x="60" y="24" text-anchor="middle" fill="#93C5FD" font-family="Inter, sans-serif" font-size="11">Model Training</text>
+    </g>
+    <g transform="translate(260,50)">
+      <rect x="0" y="0" width="120" height="40" rx="8" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.2)" stroke-width="1" />
+      <text x="60" y="24" text-anchor="middle" fill="#93C5FD" font-family="Inter, sans-serif" font-size="11">Inference</text>
+    </g>
+    <g transform="translate(400,50)">
+      <rect x="0" y="0" width="140" height="40" rx="8" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.2)" stroke-width="1" />
+      <text x="70" y="24" text-anchor="middle" fill="#93C5FD" font-family="Inter, sans-serif" font-size="11">Decision Engine</text>
+    </g>
+  </g>
+
+  <!-- TIER 2: Middleware / Oracle (center) -->
+  <g transform="translate(100,175)">
+    <rect x="0" y="0" width="600" height="70" rx="12" fill="rgba(6,182,212,0.06)" stroke="rgba(6,182,212,0.3)" stroke-width="1.5" />
+    
+    <text x="20" y="28" fill="#06B6D4" font-family="Inter, sans-serif" font-size="14" font-weight="700">Middleware / Oracle</text>
+    
+    <!-- Bi-directional arrows icon -->
+    <g transform="translate(300,40)">
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#06B6D4" stroke-width="1.5" opacity="0.5" />
+      <polygon points="-100,-4 -108,0 -100,4" fill="#06B6D4" opacity="0.6" />
+      <polygon points="100,-4 108,0 100,4" fill="#06B6D4" opacity="0.6" />
+    </g>
+
+    <!-- Labels -->
+    <text x="250" y="55" text-anchor="middle" fill="#67E8F9" font-family="Inter, sans-serif" font-size="10" opacity="0.7">Data Validation</text>
+    <text x="400" y="55" text-anchor="middle" fill="#67E8F9" font-family="Inter, sans-serif" font-size="10" opacity="0.7">API Bridge</text>
+    <text x="540" y="55" text-anchor="middle" fill="#67E8F9" font-family="Inter, sans-serif" font-size="10" opacity="0.7">Format Translation</text>
+  </g>
+
+  <!-- TIER 3: Blockchain Layer (bottom) -->
+  <g transform="translate(100,280)">
+    <rect x="0" y="0" width="600" height="110" rx="12" fill="rgba(139,92,246,0.06)" stroke="rgba(139,92,246,0.3)" stroke-width="1.5" />
+    
+    <text x="20" y="30" fill="#8B5CF6" font-family="Inter, sans-serif" font-size="14" font-weight="700">Blockchain Layer</text>
+    
+    <!-- Chain icon -->
+    <g transform="translate(40,70)">
+      <rect x="-14" y="-10" width="12" height="20" rx="3" fill="none" stroke="#8B5CF6" stroke-width="1.5" />
+      <rect x="2" y="-10" width="12" height="20" rx="3" fill="none" stroke="#8B5CF6" stroke-width="1.5" />
+    </g>
+
+    <!-- Sub-components -->
+    <g transform="translate(120,50)">
+      <rect x="0" y="0" width="130" height="40" rx="8" fill="rgba(139,92,246,0.08)" stroke="rgba(139,92,246,0.2)" stroke-width="1" />
+      <text x="65" y="24" text-anchor="middle" fill="#C4B5FD" font-family="Inter, sans-serif" font-size="11">Smart Contracts</text>
+    </g>
+    <g transform="translate(270,50)">
+      <rect x="0" y="0" width="120" height="40" rx="8" fill="rgba(139,92,246,0.08)" stroke="rgba(139,92,246,0.2)" stroke-width="1" />
+      <text x="60" y="24" text-anchor="middle" fill="#C4B5FD" font-family="Inter, sans-serif" font-size="11">Consensus</text>
+    </g>
+    <g transform="translate(410,50)">
+      <rect x="0" y="0" width="140" height="40" rx="8" fill="rgba(139,92,246,0.08)" stroke="rgba(139,92,246,0.2)" stroke-width="1" />
+      <text x="70" y="24" text-anchor="middle" fill="#C4B5FD" font-family="Inter, sans-serif" font-size="11">Immutable Ledger</text>
+    </g>
+  </g>
+
+  <!-- Vertical arrows: AI → Middleware -->
+  <g>
+    <!-- Down arrow (AI sends decisions) -->
+    <line x1="320" y1="140" x2="320" y2="175" stroke="#3B82F6" stroke-width="1.5" opacity="0.6" />
+    <polygon points="316,173 320,180 324,173" fill="#3B82F6" opacity="0.6" />
+    <text x="310" y="162" text-anchor="end" fill="#93C5FD" font-family="Inter, sans-serif" font-size="9" opacity="0.6">Decisions ↓</text>
+
+    <!-- Up arrow (Blockchain sends verified data) -->
+    <line x1="480" y1="175" x2="480" y2="140" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6" />
+    <polygon points="476,142 480,135 484,142" fill="#8B5CF6" opacity="0.6" />
+    <text x="490" y="162" fill="#C4B5FD" font-family="Inter, sans-serif" font-size="9" opacity="0.6">↑ Verified Data</text>
+  </g>
+
+  <!-- Vertical arrows: Middleware → Blockchain -->
+  <g>
+    <line x1="320" y1="245" x2="320" y2="280" stroke="#06B6D4" stroke-width="1.5" opacity="0.6" />
+    <polygon points="316,278 320,285 324,278" fill="#06B6D4" opacity="0.6" />
+    <text x="310" y="268" text-anchor="end" fill="#67E8F9" font-family="Inter, sans-serif" font-size="9" opacity="0.6">Record ↓</text>
+
+    <line x1="480" y1="280" x2="480" y2="245" stroke="#06B6D4" stroke-width="1.5" opacity="0.6" />
+    <polygon points="476,247 480,240 484,247" fill="#06B6D4" opacity="0.6" />
+    <text x="490" y="268" fill="#67E8F9" font-family="Inter, sans-serif" font-size="9" opacity="0.6">↑ Query</text>
+  </g>
+
+  <!-- Side labels -->
+  <text x="50" y="90" fill="rgba(255,255,255,0.15)" font-family="Inter, sans-serif" font-size="10" transform="rotate(-90,50,90)">OFF-CHAIN</text>
+  <text x="50" y="340" fill="rgba(255,255,255,0.15)" font-family="Inter, sans-serif" font-size="10" transform="rotate(-90,50,340)">ON-CHAIN</text>
+
+  <!-- Decorative dashed separator -->
+  <line x1="70" y1="250" x2="730" y2="250" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4" />
+</svg>
