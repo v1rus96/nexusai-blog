@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const STORAGE_KEY = "newsletter_email";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [alreadySignedUp, setAlreadySignedUp] = useState(false);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        setAlreadySignedUp(true);
+        setSubmitted(true);
+      }
+    } catch {
+      // localStorage unavailable
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
+      try {
+        localStorage.setItem(STORAGE_KEY, email);
+      } catch {
+        // localStorage unavailable
+      }
       setSubmitted(true);
       setEmail("");
     }
@@ -24,9 +44,15 @@ export default function NewsletterSignup() {
       <div className="relative p-8 sm:p-10">
         {submitted ? (
           <div className="text-center py-4">
-            <div className="text-4xl mb-3">✨</div>
-            <h3 className="text-xl font-bold mb-2">You&apos;re on the list!</h3>
-            <p className="text-gray-600 dark:text-gray-400">We&apos;ll send you the latest insights on AI &amp; blockchain.</p>
+            <div className="text-4xl mb-3">{alreadySignedUp ? "👋" : "✨"}</div>
+            <h3 className="text-xl font-bold mb-2">
+              {alreadySignedUp ? "You're already signed up!" : "Newsletter launching soon — we'll notify you when it's live!"}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              {alreadySignedUp
+                ? "We've got your email. We'll let you know when the newsletter goes live."
+                : "Thanks for your interest! We're setting things up and will reach out soon."}
+            </p>
           </div>
         ) : (
           <>

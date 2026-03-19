@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     datePublished: post.date,
@@ -152,7 +152,8 @@ export default async function BlogPostPage({ params }: Props) {
     author: { "@type": "Person", name: post.author },
     publisher: { "@type": "Organization", name: SITE_NAME },
     url: `${SITE_URL}/blog/${slug}`,
-    image: `${SITE_URL}/og-default.png`,
+    image: post.image ? (post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`) : `${SITE_URL}/og-default.png`,
+    keywords: post.tags.join(", "),
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${slug}` },
   };
 
