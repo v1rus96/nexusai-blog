@@ -6,6 +6,7 @@ import { SITE_NAME, CATEGORIES } from "@/lib/constants";
 import ThemeToggle from "./ThemeToggle";
 import ReadingStreak from "./ReadingStreak";
 import { TrophyIcon } from "./AchievementBadges";
+import Search from "./Search";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,6 +68,7 @@ export default function Header() {
             RSS
           </Link>
           <div className="ml-2 pl-2 border-l border-black/[0.08] dark:border-white/[0.08] flex items-center gap-2">
+            <Search />
             <ReadingStreak />
             <TrophyIcon />
             <ThemeToggle />
@@ -75,6 +77,7 @@ export default function Header() {
 
         {/* Mobile */}
         <div className="flex sm:hidden items-center gap-1">
+          <Search />
           <ReadingStreak />
           <TrophyIcon />
           <ThemeToggle />

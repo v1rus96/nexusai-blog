@@ -1,0 +1,128 @@
+name: 🔗 Link Checker
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+    paths:
+      - 'content/posts/**/*.mdx'
+      - 'public/**/*'
+      - '.github/workflows/link-check.yml'
+  push:
+    branches: [main, master]
+    paths:
+      - 'content/posts/**/*.mdx'
+      - 'public/**/*'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    name: 🔍 Scan for Broken Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🔍 Run Link Scanner
+        id: scan
+        run: |
+          cat > /tmp/link-scanner.sh << 'SCANNER'
+          #!/bin/bash
+          set -uo pipefail
+
+          BLOG_DIR="${GITHUB_WORKSPACE:-.}"
+          POSTS_DIR="$BLOG_DIR/content/posts"
+          PUBLIC_DIR="$BLOG_DIR/public"
+
+          TOTAL_FILES=0; PASSED_FILES=0; FAILED_FILES=0; TOTAL_ISSUES=0
+          declare -a RESULTS
+
+          extract_internal_links() {
+            grep -oE '\[[^\]]+\]\(/blog/[^)]+\)' "$1" | sed 's/.*(\([^)]*\)).*/\1/' || true
+          }
+
+          extract_image_refs() {
+            grep -oE '!\[[^\]]*\]\([^)]+\)' "$1" | sed 's/.*(\([^)]*\)).*/\1/' || true
+            grep -E '^(image|cover|thumbnail|hero):' "$1" | sed 's/^[^:]*:\s*//' | sed "s/^[\"']\|[\"']$//g" || true
+          }
+
+          extract_external_urls() {
+            grep -oE '\[[^\]]+\]\(https?://[^)]+\)' "$1" | sed 's/.*(\([^)]*\)).*/\1/' || true
+          }
+
+          check_internal_link() {
+            local link="$1"
+            if [[ "$link" =~ ^/blog/(.+)$ ]]; then
+              local slug="${BASH_REMATCH[1]%%#*}"
+              slug="${slug%%\?*}"
+              [ -f "$POSTS_DIR/${slug}.mdx" ] && return 0
+              grep -ql "^slug:.*${slug}" "$POSTS_DIR"/*.mdx 2>/dev/null && return 0
+              return 1
+            fi
+            return 0
+          }
+
+          check_image_exists() {
+            local p="$1"
+            [[ "$p" =~ ^(https?://|data:) ]] && return 0
+            [[ -z "$p" ]] && return 0
+            p="${p#/}"
+            [ -f "$PUBLIC_DIR/$p" ]
+          }
+
+          check_external_url() {
+            curl -sfL --max-time 5 --head "$1" >/dev/null 2>&1
+          }
+
+          scan_file() {
+            local file="$1" fn=$(basename "$1") ok=true issues=()
+
+            while IFS= read -r link; do
+              [ -n "$link" ] && ! check_internal_link "$link" && { issues+=("Broken link: $link"); ok=false; }
+            done < <(extract_internal_links "$file")
+
+            while IFS= read -r img; do
+              [ -n "$img" ] && ! check_image_exists "$img" && { issues+=("Missing image: $img"); ok=false; }
+            done < <(extract_image_refs "$file")
+
+            while IFS= read -r url; do
+              [ -n "$url" ] && ! check_external_url "$url" && { issues+=("Broken URL: $url"); ok=false; }
+            done < <(extract_external_urls "$file")
+
+            if $ok; then
+              echo "✅ $fn: PASS"
+              ((PASSED_FILES++)) || true
+            else
+              echo "❌ $fn: FAIL - ${issues[*]}"
+              ((FAILED_FILES++)) || true
+              ((TOTAL_ISSUES+=${#issues[@]})) || true
+            fi
+            ((TOTAL_FILES++)) || true
+          }
+
+          echo "🔍 Scanning blog posts for broken links..."
+          while IFS= read -r -d '' f; do scan_file "$f"; done < <(find "$POSTS_DIR" -name "*.mdx" -print0)
+
+          echo ""
+          echo "📊 Summary: $TOTAL_FILES files | ✅ $PASSED_FILES passed | ❌ $FAILED_FILES failed | 🐛 $TOTAL_ISSUES issues"
+
+          [ $TOTAL_ISSUES -eq 0 ] && echo "🎉 All checks passed!" && exit 0
+          echo "💥 $TOTAL_ISSUES issues found!" && exit 1
+          SCANNER
+
+          chmod +x /tmp/link-scanner.sh
+          /tmp/link-scanner.sh
+        continue-on-error: true
+
+      - name: 📝 Summary
+        if: always()
+        run: |
+          if [ "${{ steps.scan.outcome }}" == "success" ]; then
+            echo "## ✅ Link Check Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Link Check Failed" >> $GITHUB_STEP_SUMMARY
+            echo "Broken links or missing images found. See logs." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🚫 Fail on Issues
+        if: steps.scan.outcome == 'failure'
+        run: exit 1

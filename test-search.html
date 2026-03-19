@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Search</title>
+</head>
+<body>
+    <h1>Test Pagefind Search</h1>
+    <div id="search"></div>
+
+    <script src="/pagefind/pagefind.js"></script>
+    <script>
+        async function testSearch() {
+            try {
+                console.log('Initializing Pagefind...');
+                await pagefind.init();
+                console.log('Pagefind initialized successfully!');
+
+                const results = await pagefind.search("blockchain");
+                console.log('Search results for "blockchain":', results);
+
+                if (results.results.length > 0) {
+                    const firstResult = await results.results[0].data();
+                    console.log('First result data:', firstResult);
+                }
+            } catch (error) {
+                console.error('Pagefind error:', error);
+            }
+        }
+
+        testSearch();
+    </script>
+</body>
+</html>
