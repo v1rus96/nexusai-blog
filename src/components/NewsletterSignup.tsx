@@ -29,30 +29,23 @@ export default function NewsletterSignup() {
     setErrorMsg("");
 
     try {
-      const res = await fetch(
-        `https://api.buttondown.com/v1/subscribers`,
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("tag", "website");
+
+      await fetch(
+        `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email_address: email,
-            tags: ["website"],
-          }),
+          body: formData,
+          mode: "no-cors",
         }
       );
 
-      if (res.ok || res.status === 201) {
-        setStatus("success");
-        try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
-        setEmail("");
-      } else if (res.status === 409) {
-        // Already subscribed
-        setStatus("already");
-        try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
-      } else {
-        // Fallback: submit via Buttondown's plain form endpoint (no CORS issues)
-        submitViaForm();
-      }
+      // no-cors returns an opaque response, so we assume success
+      setStatus("success");
+      try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
+      setEmail("");
     } catch {
       // Network error — fall back to direct form submission
       submitViaForm();
