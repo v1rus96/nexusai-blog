@@ -82,16 +82,16 @@ const mdxComponents = {
     <p className="my-6 leading-[1.75] text-gray-700 dark:text-gray-300 text-[17px]" {...props} />
   ),
   ul: (props: React.ComponentProps<"ul">) => (
-    <ul className="my-5 ml-6 list-disc space-y-2.5 marker:text-blue-400/60" {...props} />
+    <ul className="my-5 ml-6 list-disc space-y-2.5 marker:text-[#E91E90]/60" {...props} />
   ),
   ol: (props: React.ComponentProps<"ol">) => (
-    <ol className="my-5 ml-6 list-decimal space-y-2.5 marker:text-blue-400/60" {...props} />
+    <ol className="my-5 ml-6 list-decimal space-y-2.5 marker:text-[#E91E90]/60" {...props} />
   ),
   li: (props: React.ComponentProps<"li">) => (
     <li className="leading-[1.75] text-gray-700 dark:text-gray-300 text-[17px] pl-1" {...props} />
   ),
   code: (props: React.ComponentProps<"code">) => (
-    <code className="bg-blue-600/[0.08] dark:bg-white/[0.06] rounded-md px-2 py-1 text-[0.875em] font-mono text-blue-800 dark:text-blue-300" {...props} />
+    <code className="bg-[#C61884]/[0.08] dark:bg-white/[0.06] rounded-md px-2 py-1 text-[0.875em] font-mono text-blue-800 dark:text-blue-300" {...props} />
   ),
   pre: (props: React.ComponentProps<"pre">) => (
     <CodeCopyWrapper>
@@ -99,13 +99,13 @@ const mdxComponents = {
     </CodeCopyWrapper>
   ),
   blockquote: (props: React.ComponentProps<"blockquote">) => (
-    <blockquote className="border-l-3 border-blue-600/40 dark:border-blue-500/50 pl-6 italic my-10 text-gray-600 dark:text-gray-400 bg-blue-500/[0.05] dark:bg-blue-500/[0.03] py-4 pr-4 rounded-r-xl" {...props} />
+    <blockquote className="border-l-3 border-[#C61884]/40 dark:border-[#E91E90]/50 pl-6 italic my-10 text-gray-600 text-white/60 bg-[#E91E90]/[0.05] dark:bg-[#E91E90]/[0.03] py-4 pr-4 rounded-r-xl" {...props} />
   ),
   a: (props: React.ComponentProps<"a">) => (
-    <a className="text-blue-600 dark:text-blue-400 underline decoration-blue-600/30 dark:decoration-blue-500/30 underline-offset-[6px] hover:decoration-blue-600 dark:hover:decoration-blue-400 hover:decoration-2 transition-colors" {...props} />
+    <a className="text-[#C61884] dark:text-[#E91E90] underline decoration-[#C61884]/30 dark:decoration-[#E91E90]/30 underline-offset-[6px] hover:decoration-[#C61884] dark:hover:decoration-[#E91E90] hover:decoration-2 transition-colors" {...props} />
   ),
   strong: (props: React.ComponentProps<"strong">) => (
-    <strong className="font-semibold text-gray-900 dark:text-gray-100" {...props} />
+    <strong className="font-semibold text-gray-900 text-white" {...props} />
   ),
   hr: () => (
     <hr className="my-12 border-black/[0.08] dark:border-white/[0.06]" />
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: Props) {
               href={`/category/${slugify(post.category)}`}
               className="gradient-pill hover:scale-105 transition-transform"
             >
-              <span className="block px-3 py-1 text-xs font-semibold text-blue-400">
+              <span className="block px-3 py-1 text-xs font-semibold text-[#E91E90]">
                 {post.category}
               </span>
             </Link>
@@ -196,7 +196,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
+          <p className="text-lg text-gray-500 text-white/60 leading-relaxed mb-8">
             {post.description}
           </p>
 
@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <div className="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-black/[0.06] dark:border-white/[0.06]">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-blue-500/20">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#C61884] to-[#E91E90] flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-[#E91E90]/20">
                 {post.author.charAt(0)}
               </div>
               <div>
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
                   key={tag}
                   className="gradient-pill"
                 >
-                  <span className="block px-3 py-1 text-xs font-medium text-gray-500 dark:text-gray-400">
+                  <span className="block px-3 py-1 text-xs font-medium text-gray-500 text-white/60">
                     #{tag}
                   </span>
                 </span>
@@ -275,7 +275,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-10 pt-8 border-t border-black/[0.06] dark:border-white/[0.06] flex items-center justify-between flex-wrap gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#E91E90] hover:text-blue-300 transition-colors group"
           >
             <svg className="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

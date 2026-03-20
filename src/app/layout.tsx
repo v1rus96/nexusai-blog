@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
@@ -10,9 +10,15 @@ import "./globals.css";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-const inter = Inter({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -51,13 +57,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} dark`} suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark');else if(t==='light')document.documentElement.classList.remove('dark');else document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`,
-          }}
-        />
         <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href="/rss" />
         {/* WebSite JSON-LD */}
         <script
@@ -73,12 +74,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased font-[family-name:var(--font-inter)]">
-        <Header />
-        <main id="main-content" className="flex-1 mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-screen bg-[#B8B8C8] font-[family-name:var(--font-dm-sans)] antialiased">
+        <div className="max-w-[1300px] mx-auto my-4 bg-[#1A0A2E] rounded-2xl overflow-hidden min-h-[calc(100vh-2rem)]">
+          <Header />
+          <main id="main-content" className="px-6 sm:px-10 lg:px-16 py-8 sm:py-12">
+            {children}
+          </main>
+          <Footer />
+        </div>
 
         {/* Vercel Analytics + Speed Insights */}
         <Analytics />

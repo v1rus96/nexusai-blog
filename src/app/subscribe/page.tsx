@@ -45,7 +45,7 @@ export default function SubscribePage() {
 
       {/* Social proof */}
       <section className="glass-card rounded-2xl p-8 sm:p-10 mb-8 text-center">
-        <p className="text-sm text-blue-400 font-semibold uppercase tracking-wider mb-4">
+        <p className="text-sm text-[#E91E90] font-semibold uppercase tracking-wider mb-4">
           Join 100+ readers
         </p>
         <p className="text-gray-400 text-sm leading-relaxed max-w-md mx-auto">

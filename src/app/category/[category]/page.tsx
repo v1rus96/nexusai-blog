@@ -44,7 +44,7 @@ export default async function CategoryPage({ params }: Props) {
     <>
       <div className="mb-12">
         <div className="gradient-pill inline-block mb-4">
-          <span className="block px-4 py-1.5 text-sm font-semibold text-blue-400">
+          <span className="block px-4 py-1.5 text-sm font-semibold text-[#E91E90]">
             {display}
           </span>
         </div>

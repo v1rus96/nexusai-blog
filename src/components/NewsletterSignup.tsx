@@ -92,9 +92,9 @@ export default function NewsletterSignup() {
   return (
     <section className="relative overflow-hidden rounded-2xl glass-card border border-white/[0.08] hover:border-white/[0.12] transition-all duration-300">
       {/* Enhanced gradient glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-violet-500/4 to-cyan-500/8 pointer-events-none" />
-      <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E91E90]/8 via-[#E91E90]/4 to-cyan-500/8 pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#E91E90]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-[#E91E90]/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative p-8 sm:p-10">
@@ -105,12 +105,12 @@ export default function NewsletterSignup() {
             }`}>
               {status === "already" ? "👋" : "🎉"}
             </div>
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-blue-600 mx-auto mb-4 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-[#C61884] mx-auto mb-4 flex items-center justify-center">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-[#E91E90] to-[#E91E90] bg-clip-text text-transparent">
               {status === "already" ? "You're already in the club!" : "Welcome to the future!"}
             </h3>
             <p className="text-gray-400 max-w-md mx-auto leading-relaxed">
@@ -121,11 +121,11 @@ export default function NewsletterSignup() {
             {status === "success" && (
               <div className="mt-6 flex items-center justify-center gap-4 text-xs text-gray-500">
                 <div className="flex items-center gap-1">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#E91E90] rounded-full animate-pulse"></div>
                   <span>Premium content</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#E91E90] rounded-full animate-pulse"></div>
                   <span>Weekly insights</span>
                 </div>
                 <div className="flex items-center gap-1">
@@ -138,13 +138,13 @@ export default function NewsletterSignup() {
         ) : (
           <>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#C61884] to-[#E91E90] flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold bg-gradient-to-r from-[#E91E90] to-[#E91E90] bg-clip-text text-transparent">
                   Join 10,000+ Tech Leaders
                 </h3>
                 <p className="text-xs text-gray-500">Weekly AI & Blockchain insights</p>
@@ -153,18 +153,18 @@ export default function NewsletterSignup() {
             
             <p className="text-gray-400 mb-6 max-w-lg leading-relaxed">
               Get exclusive insights on emerging AI models, blockchain innovations, and Web3 trends. 
-              <span className="text-blue-400 font-medium"> Curated by industry experts</span>, 
+              <span className="text-[#E91E90] font-medium"> Curated by industry experts</span>, 
               delivered every Tuesday.
             </p>
 
             {/* Benefits list */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
               <div className="flex items-center gap-2 text-sm">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#E91E90] rounded-full"></div>
                 <span className="text-gray-300">AI breakthroughs</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <div className="w-2 h-2 bg-violet-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#E91E90] rounded-full"></div>
                 <span className="text-gray-300">DeFi updates</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
@@ -187,7 +187,7 @@ export default function NewsletterSignup() {
                     placeholder="your.email@company.com"
                     required
                     disabled={status === "loading"}
-                    className="w-full px-4 py-4 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all disabled:opacity-50 hover:border-white/[0.12]"
+                    className="w-full px-4 py-4 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#E91E90]/50 focus:border-[#E91E90]/50 transition-all disabled:opacity-50 hover:border-white/[0.12]"
                   />
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                     <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,7 +199,7 @@ export default function NewsletterSignup() {
                 <button
                   type="submit"
                   disabled={status === "loading" || !email}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-violet-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 relative overflow-hidden group"
+                  className="px-8 py-4 bg-gradient-to-r from-[#C61884] to-[#E91E90] text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-[#E91E90]/25 transition-all duration-300 whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 relative overflow-hidden group"
                 >
                   {status === "loading" ? (
                     <div className="flex items-center gap-2">

@@ -179,10 +179,10 @@ export default function Search() {
   };
 
   const filters = [
-    { key: "all", label: "All", color: "blue" },
-    { key: "ai", label: "AI", color: "blue" },
-    { key: "blockchain", label: "Blockchain", color: "violet" },
-    { key: "web3", label: "Web3", color: "cyan" },
+    { key: "all", label: "All" },
+    { key: "ai", label: "AI" },
+    { key: "blockchain", label: "Blockchain" },
+    { key: "web3", label: "Web3" },
   ];
 
   return (
@@ -195,7 +195,7 @@ export default function Search() {
             setTimeout(() => inputRef.current?.focus(), 50);
           }
         }}
-        className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-all duration-200 border border-transparent hover:border-black/[0.08] dark:hover:border-white/[0.08]"
+        className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 text-white/60 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-all duration-200 border border-transparent hover:border-black/[0.08] dark:hover:border-white/[0.08]"
         title="Search (⌘K)"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -222,7 +222,7 @@ export default function Search() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search articles, topics, or authors..."
-                    className="w-full pl-12 pr-4 py-4 bg-white/[0.05] border border-white/[0.10] rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full pl-12 pr-4 py-4 bg-white/[0.05] border border-white/[0.10] rounded-xl text-white placeholder-gray-400 focus:border-[#E91E90] focus:ring-1 focus:ring-[#E91E90] transition-colors"
                     autoFocus
                   />
                   {query && (
@@ -253,11 +253,7 @@ export default function Search() {
                       onClick={() => setActiveFilter(filter.key)}
                       className={`px-3 py-1 rounded-full text-xs transition-colors ${
                         activeFilter === filter.key
-                          ? filter.color === 'violet'
-                            ? 'bg-violet-600 text-white'
-                            : filter.color === 'cyan'
-                            ? 'bg-cyan-600 text-white'
-                            : 'bg-blue-600 text-white'
+                          ? 'bg-[#E91E90] text-white'
                           : 'bg-white/[0.05] text-gray-400 hover:bg-white/[0.08]'
                       }`}
                     >
@@ -355,7 +351,7 @@ export default function Search() {
                     }`}
                   >
                     <div className="flex gap-4">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/20 to-violet-600/20 flex-shrink-0">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-gradient-to-br from-[#E91E90]/25 to-[#C61884]/25 flex-shrink-0">
                         {result.image ? (
                           <Image 
                             src={result.image} 
@@ -374,7 +370,7 @@ export default function Search() {
                       </div>
                       
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-medium mb-1 line-clamp-1 group-hover:text-blue-400 transition-colors">
+                        <h3 className="font-medium mb-1 line-clamp-1 group-hover:text-[#E91E90] transition-colors">
                           {result.title}
                         </h3>
                         
@@ -383,7 +379,7 @@ export default function Search() {
                         </p>
                         
                         <div className="flex items-center gap-2 text-xs text-gray-500">
-                          <span className="px-2 py-1 bg-blue-500/10 text-blue-400 rounded-full">
+                          <span className="px-2 py-1 bg-[#E91E90]/15 text-[#E91E90] rounded-full">
                             {result.category}
                           </span>
                           <span>{result.readingTime}</span>

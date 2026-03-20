@@ -33,7 +33,7 @@ export default function CodeCopyWrapper({
       {children}
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-2 p-2 bg-white/10 hover:bg-white/20 rounded-lg cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-blue-500/50 [@media(hover:none)]:opacity-100"
+        className="absolute top-2 right-2 p-2 bg-white/10 hover:bg-white/20 rounded-lg cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#E91E90]/50 [@media(hover:none)]:opacity-100"
         aria-label={copied ? "Copied!" : "Copy code to clipboard"}
         tabIndex={0}
       >

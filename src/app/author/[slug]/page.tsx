@@ -71,14 +71,14 @@ export default async function AuthorPage({ params }: Props) {
       <div className="max-w-3xl mx-auto mb-12">
         <div className="glass-card rounded-2xl p-8 sm:p-10">
           <div className="flex items-start gap-6">
-            <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg shadow-blue-500/20">
+            <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-gradient-to-br from-[#C61884] to-[#E91E90] flex items-center justify-center text-white text-3xl font-bold shadow-lg shadow-[#E91E90]/20">
               {author.name.charAt(0)}
             </div>
             <div className="flex-1">
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">
                 {author.name}
               </h1>
-              <p className="text-sm text-blue-600 dark:text-blue-400 mb-3">
+              <p className="text-sm text-[#C61884] dark:text-[#E91E90] mb-3">
                 {author.title} at{" "}
                 <a
                   href={author.companyUrl}
@@ -89,7 +89,7 @@ export default async function AuthorPage({ params }: Props) {
                   {author.company}
                 </a>
               </p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+              <p className="text-gray-600 text-white/60 leading-relaxed text-sm">
                 {author.bio}
               </p>
 
@@ -100,7 +100,7 @@ export default async function AuthorPage({ params }: Props) {
                     href={author.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-400 transition-colors"
+                    className="text-gray-500 hover:text-[#E91E90] transition-colors"
                     aria-label="Twitter"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

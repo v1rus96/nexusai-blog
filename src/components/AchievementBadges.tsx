@@ -120,7 +120,7 @@ function Toast({ badge, onClose }: { badge: Badge; onClose: () => void }) {
         visible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
       }`}
     >
-      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-violet-500 border border-yellow-400 flex items-center justify-center text-lg flex-shrink-0">
+      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E91E90] to-[#E91E90] border border-yellow-400 flex items-center justify-center text-lg flex-shrink-0">
         {badge.emoji}
       </div>
       <div className="flex-1 min-w-0">
@@ -244,7 +244,7 @@ function BadgePanel({
         </p>
         <div className="h-1.5 bg-white/10 rounded-full mb-4">
           <div
-            className="h-full bg-gradient-to-r from-blue-500 to-violet-500 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-[#E91E90] to-[#E91E90] rounded-full transition-all duration-500"
             style={{ width: `${(unlockedCount / BADGES.length) * 100}%` }}
           />
         </div>
@@ -260,7 +260,7 @@ function BadgePanel({
                 <div
                   className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl ${
                     unlocked
-                      ? "bg-gradient-to-br from-blue-500 to-violet-500 border-2 border-yellow-400 shadow-lg shadow-blue-500/25 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 transition-transform duration-200"
+                      ? "bg-gradient-to-br from-[#E91E90] to-[#E91E90] border-2 border-yellow-400 shadow-lg shadow-[#E91E90]/25 hover:scale-105 hover:shadow-xl hover:shadow-[#E91E90]/30 transition-transform duration-200"
                       : "bg-white/5 border border-white/10 opacity-40 grayscale"
                   }`}
                 >

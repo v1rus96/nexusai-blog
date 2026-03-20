@@ -52,7 +52,7 @@ export default async function TagPage({ params }: Props) {
       <div className="mb-12">
         <Link
           href="/tags"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-blue-400 transition-colors mb-4"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E91E90] transition-colors mb-4"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -60,7 +60,7 @@ export default async function TagPage({ params }: Props) {
           All tags
         </Link>
         <div className="gradient-pill inline-block mb-4">
-          <span className="block px-4 py-1.5 text-sm font-semibold text-blue-400">
+          <span className="block px-4 py-1.5 text-sm font-semibold text-[#E91E90]">
             {display}
           </span>
         </div>

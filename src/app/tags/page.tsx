@@ -41,12 +41,12 @@ export default function TagsPage() {
           <Link
             key={tag}
             href={`/tags/${slugify(tag)}`}
-            className="glass-card rounded-xl px-4 py-2.5 flex items-center gap-2 hover:!border-blue-500/30 transition-all group"
+            className="glass-card rounded-xl px-4 py-2.5 flex items-center gap-2 hover:!border-[#E91E90]/30 transition-all group"
           >
-            <span className="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">
+            <span className="text-sm font-medium text-gray-300 group-hover:text-[#E91E90] transition-colors">
               {tag}
             </span>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-white/[0.06] text-gray-500 group-hover:text-blue-400/80 transition-colors">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-white/[0.06] text-gray-500 group-hover:text-[#E91E90]/80 transition-colors">
               {count}
             </span>
           </Link>

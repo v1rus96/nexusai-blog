@@ -85,7 +85,7 @@ export default function ArticleReactions({ slug }: { slug: string }) {
             onClick={() => toggle(key)}
             className={`flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] w-10 h-10 rounded-xl cursor-pointer transition-transform duration-150 ease-out hover:scale-110 active:scale-95 border ${
               isSelected
-                ? "ring-2 ring-blue-500/50 bg-white/10 scale-105 border-transparent"
+                ? "ring-2 ring-[#E91E90]/50 bg-white/10 scale-105 border-transparent"
                 : "bg-transparent hover:bg-white/10 border-transparent"
             }`}
             aria-label={`React with ${emoji}`}

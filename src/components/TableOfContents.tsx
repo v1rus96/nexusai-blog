@@ -101,7 +101,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                     level === 3 ? "ml-4" : ""
                   } ${
                     activeId === id
-                      ? "text-blue-600 dark:text-blue-400"
+                      ? "text-[#C61884] dark:text-[#E91E90]"
                       : "text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
@@ -117,7 +117,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
       <div className="fixed bottom-20 right-4 z-40 lg:hidden">
         <button 
           onClick={toggleMobileTOC}
-          className="w-12 h-12 rounded-full bg-blue-600 shadow-lg shadow-blue-600/25 flex items-center justify-center text-white hover:bg-blue-500 transition-all duration-200"
+          className="w-12 h-12 rounded-full bg-[#C61884] shadow-lg shadow-[#C61884]/25 flex items-center justify-center text-white hover:bg-[#E91E90] transition-all duration-200"
           aria-label="Toggle table of contents"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +131,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-gray-900 dark:text-gray-200">Contents</h3>
               <div className="text-xs text-gray-500">
-                <span className="text-blue-400">{currentSectionIndex + 1}</span>
+                <span className="text-[#E91E90]">{currentSectionIndex + 1}</span>
                 <span className="mx-1">/</span>
                 <span>{totalSections}</span>
               </div>
@@ -144,7 +144,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                     onClick={() => handleClick(id)}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                       activeId === id 
-                        ? 'bg-blue-500/10 text-blue-400 border-l-2 border-blue-500' 
+                        ? 'bg-[#E91E90]/10 text-[#E91E90] border-l-2 border-[#E91E90]' 
                         : 'text-gray-400 hover:text-gray-300 hover:bg-white/[0.04]'
                     } ${level === 3 ? "ml-4" : ""}`}
                   >
@@ -152,7 +152,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                       <span className="truncate">{text}</span>
                       <div className="flex items-center gap-2">
                         {sectionProgress[id] > 0 && (
-                          <div className="w-2 h-2 rounded-full bg-blue-500 opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#E91E90] opacity-60"></div>
                         )}
                       </div>
                     </div>
@@ -160,7 +160,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                     {/* Progress indicator */}
                     <div className="mt-1 h-1 bg-gray-700 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gradient-to-r from-blue-500 to-violet-600 rounded-full transition-all duration-500"
+                        className="h-full bg-gradient-to-r from-[#C61884] to-[#E91E90] rounded-full transition-all duration-500"
                         style={{ width: `${sectionProgress[id] || 0}%` }}
                       ></div>
                     </div>
@@ -178,7 +178,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-sm text-gray-300">Contents</h2>
             <div className="text-xs text-gray-500">
-              <span className="text-blue-400">{currentSectionIndex + 1}</span>
+              <span className="text-[#E91E90]">{currentSectionIndex + 1}</span>
               <span className="mx-1">/</span>
               <span>{totalSections}</span>
             </div>
@@ -191,7 +191,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                   onClick={() => handleClick(id)}
                   className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                     activeId === id 
-                      ? 'bg-blue-500/10 text-blue-400 border-l-2 border-blue-500' 
+                      ? 'bg-[#E91E90]/10 text-[#E91E90] border-l-2 border-[#E91E90]' 
                       : 'text-gray-400 hover:text-gray-300 hover:bg-white/[0.04]'
                   } ${level === 3 ? "ml-4" : ""}`}
                 >
@@ -199,7 +199,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                     <span className="truncate">{text}</span>
                     <div className="flex items-center gap-2">
                       {sectionProgress[id] > 0 && (
-                        <div className="w-2 h-2 rounded-full bg-blue-500 opacity-60"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#E91E90] opacity-60"></div>
                       )}
                     </div>
                   </div>
@@ -207,7 +207,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                   {/* Progress indicator */}
                   <div className="mt-1 h-1 bg-gray-700 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-gradient-to-r from-blue-500 to-violet-600 rounded-full transition-all duration-500"
+                      className="h-full bg-gradient-to-r from-[#C61884] to-[#E91E90] rounded-full transition-all duration-500"
                       style={{ width: `${sectionProgress[id] || 0}%` }}
                     ></div>
                   </div>

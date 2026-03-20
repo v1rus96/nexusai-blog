@@ -89,7 +89,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
 
   return (
     <div className="mt-8 mx-auto max-w-2xl">
-      <div className="bg-gradient-to-r from-blue-500 to-violet-500 rounded-2xl p-[1px] pt-[2px]">
+      <div className="bg-gradient-to-r from-[#E91E90] to-[#E91E90] rounded-2xl p-[1px] pt-[2px]">
         <div className="bg-gray-950/90 backdrop-blur-xl rounded-2xl p-6 sm:p-8">
           <h3 className="text-xl font-bold text-white mb-1">
             🧠 Test Your Knowledge
@@ -97,7 +97,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
           <p className="text-sm text-white/50 mb-6">
             {questions.length} questions about this article
             {previousScore && !submitted && (
-              <span className="ml-2 text-blue-400">
+              <span className="ml-2 text-[#E91E90]">
                 (Previous: {previousScore.score}/{previousScore.total})
               </span>
             )}
@@ -106,7 +106,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
           <div className="space-y-6">
             {questions.map((q, qi) => (
               <div key={qi}>
-                <p className="text-sm font-semibold text-blue-400 mb-2">
+                <p className="text-sm font-semibold text-[#E91E90] mb-2">
                   Question {qi + 1} of {questions.length}
                 </p>
                 <p className="text-base font-medium text-white mb-3">
@@ -132,7 +132,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
                       }
                     } else if (isSelected) {
                       optionClasses +=
-                        "bg-white/10 border-blue-500/50 text-white/80";
+                        "bg-white/10 border-[#E91E90]/50 text-white/80";
                     } else {
                       optionClasses +=
                         "bg-white/5 hover:bg-white/10 border-white/10 text-white/80";
@@ -161,7 +161,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
                           <span
                             className={`w-4 h-4 rounded-full border-2 flex-shrink-0 ${
                               isSelected
-                                ? "bg-blue-500 border-blue-500"
+                                ? "bg-[#E91E90] border-[#E91E90]"
                                 : "border-white/20"
                             }`}
                           />
@@ -181,8 +181,8 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
               disabled={!allAnswered}
               className={`mt-6 w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-200 ${
                 allAnswered
-                  ? "bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 hover:shadow-lg hover:shadow-blue-500/25 active:scale-[0.98] cursor-pointer"
-                  : "opacity-50 cursor-not-allowed bg-gradient-to-r from-blue-500 to-violet-500"
+                  ? "bg-gradient-to-r from-[#E91E90] to-[#E91E90] hover:from-[#C61884] hover:to-[#C61884] hover:shadow-lg hover:shadow-[#E91E90]/25 active:scale-[0.98] cursor-pointer"
+                  : "opacity-50 cursor-not-allowed bg-gradient-to-r from-[#E91E90] to-[#E91E90]"
               }`}
             >
               Submit Answers
@@ -196,7 +196,7 @@ export default function ArticleQuiz({ slug, questions }: ArticleQuizProps) {
               <p className="text-base text-white/70 mt-3">{scoreMessage}</p>
               <button
                 onClick={handleRetry}
-                className="mt-4 px-4 py-2 text-sm text-blue-400 hover:text-blue-300 transition-colors cursor-pointer"
+                className="mt-4 px-4 py-2 text-sm text-[#E91E90] hover:text-blue-300 transition-colors cursor-pointer"
               >
                 Try Again
               </button>

@@ -1,5 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
-import { SITE_TAGLINE } from "@/lib/constants";
 import PostCard from "@/components/PostCard";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
@@ -10,53 +11,86 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative text-center py-16 sm:py-24 mb-16">
-        {/* Decorative orbs */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-glow-pulse pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-violet-500/10 rounded-full blur-3xl animate-glow-pulse pointer-events-none" style={{ animationDelay: "2s" }} />
-
-        <div className="relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/[0.06] dark:border-white/[0.08] bg-white/[0.6] dark:bg-white/[0.03] backdrop-blur-sm text-sm font-medium text-gray-500 dark:text-gray-400 mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
-            Exploring the future of technology
-          </div>
-
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-gradient-text leading-tight">
-            {SITE_TAGLINE}
-          </h1>
-
-          <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Deep dives into artificial intelligence and blockchain technology —
-            cutting through the hype to find what actually matters.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Post */}
+      {/* Hero — 2-column layout */}
       {featured && (
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-[0.2em]">Featured</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center py-8 sm:py-12 mb-12 sm:mb-16">
+          {/* Left — Featured image with decoration */}
+          <div className="relative">
+            <Link href={`/blog/${featured.slug}`} className="block">
+              <div className="relative overflow-hidden rounded-xl">
+                {featured.image ? (
+                  <Image
+                    src={featured.image}
+                    alt={featured.title}
+                    width={600}
+                    height={450}
+                    className="w-full aspect-[4/3] object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                ) : (
+                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#E91E90]/20 to-[#C61884]/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-16 h-16 text-[#E91E90]/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </Link>
+            
+            {/* Pink dot grid decoration — bottom-left */}
+            <div className="absolute -bottom-3 -left-3 w-16 h-16 dot-grid opacity-60 pointer-events-none" />
+            
+            {/* Pink spark decoration — top-left */}
+            <div className="absolute -top-2 -left-2 text-[#E91E90] pointer-events-none">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0L14.59 8.41L24 12L14.59 15.59L12 24L9.41 15.59L0 12L9.41 8.41Z" />
+              </svg>
+            </div>
           </div>
-          <PostCard post={featured} featured />
+
+          {/* Right — Content */}
+          <div className="flex flex-col gap-5">
+            {/* Meta: Date • Category */}
+            <div className="flex items-center gap-3 text-sm">
+              <time dateTime={featured.date} className="text-white/50">
+                {new Date(featured.date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E91E90]" />
+              <span className="text-white/80">{featured.category}</span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-tight">
+              {featured.title}
+            </h1>
+
+            {/* Description */}
+            <p className="text-white/50 text-base leading-relaxed max-w-lg">
+              {featured.description}
+            </p>
+
+            {/* CTA Button */}
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#C61884] to-[#E91E90] text-white text-[15px] font-medium rounded-full w-fit hover:shadow-lg hover:shadow-[#E91E90]/30 transition-all duration-300 hover:-translate-y-0.5 mt-2"
+            >
+              Continue Reading
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </section>
       )}
 
-      {/* Bento Grid */}
+      {/* Blog Cards — 3-column grid */}
       {rest.length > 0 && (
         <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-[0.2em]">Latest</span>
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.08] to-transparent" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {rest.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
@@ -65,7 +99,7 @@ export default function HomePage() {
       )}
 
       {posts.length === 0 && (
-        <p className="text-center text-gray-500 py-16">
+        <p className="text-center text-white/50 py-16">
           No posts yet. Check back soon!
         </p>
       )}
